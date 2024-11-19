@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 function RooutLayout() {
   return (
   <>
-    <section>
+    <section className="container">
         <Navbar />
     </section>
 
