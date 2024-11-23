@@ -8,12 +8,12 @@ function RooutLayout() {
         <Navbar />
     </section>
 
-    <section>
-        <div>contents</div>
+    <section className="container">
+        {/* <div>contents</div> */}
     </section>
 
-    <section>
-        <div>Footer</div>
+    <section className="container">
+        {/* <div>Footer</div> */}
     </section>
   </>
 );
