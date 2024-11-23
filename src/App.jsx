@@ -6,6 +6,7 @@ import RooutLayout from "./layouts/RooutLayout";
 
 // pages
 import ErrorPage from "./pages/ErrorPage";
+import HomePage from "./pages/HomePage";
 
 function App() {
   const routes = createBrowserRouter([
@@ -13,7 +14,12 @@ function App() {
       path: "/",
       element: <RooutLayout />,
       errorElement: <ErrorPage />,
-      children: [],
+      children: [
+        {
+          index: "true",
+          element: <HomePage />,
+        },
+      ],
     },
   ]);
   return <RouterProvider router={routes} />;

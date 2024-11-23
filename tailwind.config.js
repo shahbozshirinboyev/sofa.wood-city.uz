@@ -5,9 +5,6 @@ export default {
     extend: {
       colors: {
         maincolor: "#34853D",
-        lighterbg: "#fffef4",
-        oranger: "#F0AF18",
-        greener: "#34853D",
       },
       container: {
         center: true,
