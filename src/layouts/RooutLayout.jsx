@@ -30,9 +30,9 @@ function RooutLayout() {
       </section>
     </div>
 
-      <section className="container">
+      <main>
         <Outlet />
-      </section>
+      </main>
 
       <div className="shadow-md"><section className="container">Foother</section></div>
     </>
