@@ -19,28 +19,41 @@ function HomePage() {
 
   return (
     <>
-      <div className="border">
-        <img src={sliderImg1} alt="" />
-
-        <div className="flex flex-row items-end justify-center gap-4">
-          {[0, 1, 2, 3].map((boxIndex) => (
-            <div
-              key={boxIndex}
-              className={`relative flex w-64 h-16 border-2 border-gray-500 transition-opacity duration-500`}
-            >
+      <div
+        className="relative w-full h-[500px] bg-cover bg-center"
+        style={{ backgroundImage: `url(${sliderImg1})` }}
+      >
+        <div className="absolute top-[100%] md:top-[82%] lg:top-[87%] w-full flex justify-center">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-0 border">
+            {[0, 1, 2, 3].map((boxIndex) => (
               <div
-                className={`${
-                  activeBox === boxIndex ? "opacity-100" : "opacity-0"
-                }`}
+                key={boxIndex}
+                className={`relative w-auto h-auto transition-opacity duration-500`}
               >
+                <div className="flex bg-white border border-gray-100">
+                  <div className="flex justify-center items-center p-4">
+                    <i className="bi bi-compass text-[24px] md:text-[35px]"></i>
+                  </div>
+                  <div className="w-[180px] flex justify-center items-center">
+                    <p className="text-[13px] md:text-[16px]">
+                      {" "}Самый большой каталог мебели{" "}
+                    </p>
+                  </div>
+                </div>
                 <div
-                  className={`absolute bottom-0 left-0 h-1 bg-blue-500 transition-all duration-[5000ms] ${
-                    activeBox === boxIndex ? "w-full" : "w-0"
+                  className={`${
+                    activeBox === boxIndex ? "opacity-100" : "opacity-0"
                   }`}
-                ></div>
+                >
+                  <div
+                    className={`absolute bottom-0 left-0 h-[4px] bg-maincolor transition-all duration-[5000ms] ${
+                      activeBox === boxIndex ? "w-full" : "w-0"
+                    }`}
+                  ></div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </>
