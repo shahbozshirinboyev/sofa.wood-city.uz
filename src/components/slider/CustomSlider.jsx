@@ -17,7 +17,7 @@ function CustomSlider({ children }) {
         setTimeout(() => {
           slideNext();
           setSlideDone(true);
-        }, 5000)
+        }, 8000)
       );
     }
   }, [slideDone]);

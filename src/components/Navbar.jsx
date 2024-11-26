@@ -4,7 +4,7 @@ import logo from "/favicon/wood_city.png";
 function Navbar() {
   const [open, setOpen] = useState(false);
   return (
-    <>
+    <div className="container">
       <div className="flex md:flex-wrap lg:flex-nowrap py-4">
         <div className="flex-1 order-2 md:order-1 flex justify-center md:justify-start items-center">
           <div className="w-[180px] cursor-pointer">
@@ -54,7 +54,24 @@ function Navbar() {
           </div>
         </div>
       </div>
-    </>
+
+      <div className="py-4 hidden lg:block lg:text-[14px] xl:text-[16px]">
+          <ul className="flex justify-between items-center font-medium transition-all duration-200">
+            <li className="hover:font-medium hover:text-maincolor cursor-pointer">Кухни</li>
+            <li className="hover:font-medium hover:text-maincolor cursor-pointer">Шкафы</li>
+            <li className="hover:font-medium hover:text-maincolor cursor-pointer">Матрасы</li>
+            <li className="hover:font-medium hover:text-maincolor cursor-pointer">Кровати</li>
+            <li className="hover:font-medium hover:text-maincolor cursor-pointer">Диваны</li>
+            <li className="hover:font-medium hover:text-maincolor cursor-pointer">Кресла</li>
+            <li className="hover:font-medium hover:text-maincolor cursor-pointer">Столы</li>
+            <li className="hover:font-medium hover:text-maincolor cursor-pointer">Стулья</li>
+            <li className="hover:font-medium hover:text-maincolor cursor-pointer">Комоды и тумбы</li>
+            <li className="hover:font-medium hover:text-maincolor cursor-pointer">Садовая мебель</li>
+            <li className="hover:font-medium hover:text-maincolor cursor-pointer">Комнаты</li>
+            <li className="hover:font-medium hover:text-maincolor cursor-pointer">Производители</li>
+          </ul>
+        </div>
+    </div>
   );
 }
 
