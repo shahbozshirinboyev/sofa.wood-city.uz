@@ -30,7 +30,7 @@ function Foother() {
             </div>
             <div>
               <p className="font-bold py-1">Присоединяйтесь</p>
-              <div className="flex justify-start items-center gap-6 text-[16px]">
+              <div className="flex justify-start items-center gap-6 text-[16px] py-1">
                 <i className="bi bi-wikipedia"></i>
                 <i className="bi bi-pinterest"></i>
                 <i className="bi bi-youtube"></i>

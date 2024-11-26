@@ -1,13 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import logo from "/favicon/wood_city.png";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [open]);
   return (
     <>
 
-    {open && <div className="relative z-[99]">
-      <div className="bg-red-300 absolute w-full h-screen overflow-x-hidden">
+    {open && <div className="relative z-[99] transition-all duration-300">
+      <div className="bg-red-300 absolute w-full h-screen overflow-x-hidden ">
         <button onClick={()=>{setOpen(!open)}} className="border px-1 py-2 m-2">close</button>
       </div>
     </div>}
@@ -27,7 +37,7 @@ function Navbar() {
             onClick={() => {
               setOpen(!open);
             }}
-            className="bg-maincolor text-white flex justify-center items-center"
+            className="bg-maincolor text-white flex justify-center items-center transition-all duration-300"
           >
             <div className="flex justify-center items-center">
               <i
