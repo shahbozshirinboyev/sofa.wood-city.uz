@@ -4,6 +4,16 @@ import logo from "/favicon/wood_city.png";
 function Navbar() {
   const [open, setOpen] = useState(false);
   return (
+    <>
+
+    {open && <div className="relative z-[99]">
+      <div className="bg-red-300 absolute w-full h-screen overflow-x-hidden">
+        <button onClick={()=>{setOpen(!open)}} className="border px-1 py-2 m-2">close</button>
+      </div>
+    </div>}
+
+
+    
     <div className="container">
       <div className="flex md:flex-wrap lg:flex-nowrap py-4">
         <div className="flex-1 order-2 md:order-1 flex justify-center md:justify-start items-center">
@@ -72,6 +82,9 @@ function Navbar() {
           </ul>
         </div>
     </div>
+
+    
+    </>
   );
 }
 
