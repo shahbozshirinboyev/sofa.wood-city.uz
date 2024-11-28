@@ -1,8 +1,17 @@
 import { furniture } from "../data/data";
 import logo from "/favicon/wood_city.png";
+import { useState } from "react";
 
 function Navbar() {
+  const [activeItem, setActiveItem] = useState(null);
   console.log(furniture);
+
+  const handleMouseEnter = (id) => {
+    setActiveItem(id); // Hover bo'lganda item id'sini saqlash
+  };
+  const handleMouseLeave = () => {
+    setActiveItem(null); // Hoverdan chiqqanda holatni o'chirish
+  };
 
   return (
     <>
@@ -63,15 +72,24 @@ function Navbar() {
 
       <dialog id="menunavbar" className="modal">
         <div className="modal-box w-11/12 max-w-5xl">
-          <h3 className="font-bold text-lg">Hello!</h3>
-          <p className="py-4">
-            Press ESC key or click the button below to close
-          </p>
-          <div className="modal-action">
-            <form method="dialog">
-              {/* if there is a button in form, it will close the modal */}
-              <button className="btn">Close</button>
-            </form>
+          <div className="grid grid-cols-3">
+            <ul>
+              {furniture.map((menu) => (
+                <li
+                  key={menu.id}
+                  onMouseEnter={() => handleMouseEnter(menu)}
+                  className={`flex justify-start items-center p-2 m-1 border relative hover ${ activeItem !== null && activeItem.id === menu.id ? "bg-base-300 font-medium": ""} cursor-pointer transition-all duration-100 ease-in-out`}
+                >
+                  <img src={menu.icon} alt={menu.name} className="px-2" />
+                  <span>{menu.name}</span>
+                  <i className="bi bi-chevron-right flex justify-center items-center absolute right-0 text-[18px] p-1"></i>
+                </li>
+              ))}
+            </ul>
+
+            <div className="col-span-2 border m-1">
+              {activeItem !== null ? activeItem.name : ""}
+            </div>
           </div>
         </div>
         <form method="dialog" className="modal-backdrop">
