@@ -80,6 +80,7 @@ function Navbar() {
                 <NavLink
                   to="/activefurnituremenu"
                   key={menu.id}
+                  state={{ activeMenuItem: menu }}
                   onClick={()=>{setActiveMenuItem(menu); document.getElementById("menunavbar").close()}}
                   onMouseEnter={() => handleMouseEnter(menu)}
                   className={`flex justify-start items-center p-2 m-1 relative ${ activeItem !== null && activeItem.id === menu.id ? "bg-base-300 font-medium text-maincolor": ""} rounded-lg cursor-pointer transition-all duration-100 ease-in-out`}
