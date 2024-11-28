@@ -6,7 +6,7 @@ import Foother from "../components/Foother";
 function RooutLayout() {
   return (
     <>
-      <section>
+      <section className="shadow-md">
         <Navbar />
       </section>
 

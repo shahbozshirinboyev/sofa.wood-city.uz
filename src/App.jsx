@@ -7,6 +7,7 @@ import RooutLayout from "./layouts/RooutLayout";
 // pages
 import ErrorPage from "./pages/ErrorPage";
 import HomePage from "./pages/HomePage";
+import ActiveFurnitureMenu from "./components/ActiveFurnitureMenu";
 
 function App() {
   const routes = createBrowserRouter([
@@ -19,6 +20,10 @@ function App() {
           index: "true",
           element: <HomePage />,
         },
+        {
+          path: "/activefurnituremenu",
+          element: <ActiveFurnitureMenu />,
+        }
       ],
     },
   ]);

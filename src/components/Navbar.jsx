@@ -1,10 +1,13 @@
+import { NavLink } from "react-router-dom";
 import { furniture } from "../data/data";
 import logo from "/favicon/wood_city.png";
 import { useState } from "react";
 
 function Navbar() {
-  const [activeItem, setActiveItem] = useState(null);
-  console.log(furniture);
+  const [activeItem, setActiveItem] = useState(furniture[0]);
+  const [activeMenuItem, setActiveMenuItem] = useState(furniture[0]);
+
+  console.log(furniture[0]);
 
   const handleMouseEnter = (id) => {
     setActiveItem(id); // Hover bo'lganda item id'sini saqlash
@@ -74,15 +77,17 @@ function Navbar() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <ul>
               {furniture.map((menu) => (
-                <li
+                <NavLink
+                  to="/activefurnituremenu"
                   key={menu.id}
+                  onClick={()=>{setActiveMenuItem(menu); document.getElementById("menunavbar").close()}}
                   onMouseEnter={() => handleMouseEnter(menu)}
                   className={`flex justify-start items-center p-2 m-1 relative ${ activeItem !== null && activeItem.id === menu.id ? "bg-base-300 font-medium text-maincolor": ""} rounded-lg cursor-pointer transition-all duration-100 ease-in-out`}
                 >
                   <img src={menu.icon} alt={menu.name} className="px-2" />
                   <span>{menu.name}</span>
                   <i className="bi bi-chevron-right flex justify-center items-center absolute right-0 text-[18px] p-1"></i>
-                </li>
+                </NavLink>
               ))}
             </ul>
 
