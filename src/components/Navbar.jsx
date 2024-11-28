@@ -91,7 +91,7 @@ function Navbar() {
               <p className="font-bold text-[20px]">{activeItem !== null ? activeItem.name : ""}</p>
               <ul className="mt-4">
                 {activeItem && activeItem.items.map((menu)=>(
-                  <li key={menu.id} className="p-1 my-1">{menu.name}</li>
+                  <li key={menu.id} className="px-2 py-1 my-1 hover:bg-base-300 hover:font-medium rounded-lg cursor-pointer flex justify-start items-center">{menu.name}</li>
                 ))}
               </ul>
             </div>
