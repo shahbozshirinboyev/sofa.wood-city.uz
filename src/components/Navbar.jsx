@@ -61,9 +61,8 @@ function Navbar() {
         <div className="py-4 hidden lg:block lg:text-[14px] xl:text-[16px]">
           <ul className="flex justify-between items-center font-medium transition-all duration-200">
             {furniture.map((menu) => (
-              <li key={menu.id} className="hover:font-medium hover:text-maincolor cursor-pointer whitespace-nowrap text-[9px] flex items-center justify-center">
+              <li key={menu.id} data-tip={`${menu.name}`} className="tooltip btn btn-sm w-[80px] hover:font-medium hover:text-maincolor cursor-pointer whitespace-nowrap text-[9px] flex items-center justify-center">
                 <img src={menu.icon} alt="" />
-                {menu.name}
               </li>
             ))}
           </ul>
@@ -78,7 +77,7 @@ function Navbar() {
                 <li
                   key={menu.id}
                   onMouseEnter={() => handleMouseEnter(menu)}
-                  className={`flex justify-start items-center p-2 m-1 relative ${ activeItem !== null && activeItem.id === menu.id ? "bg-base-300 font-medium": ""} rounded-lg cursor-pointer transition-all duration-100 ease-in-out`}
+                  className={`flex justify-start items-center p-2 m-1 relative ${ activeItem !== null && activeItem.id === menu.id ? "bg-base-300 font-medium text-maincolor": ""} rounded-lg cursor-pointer transition-all duration-100 ease-in-out`}
                 >
                   <img src={menu.icon} alt={menu.name} className="px-2" />
                   <span>{menu.name}</span>
@@ -91,7 +90,7 @@ function Navbar() {
               <p className="font-bold text-[20px]">{activeItem !== null ? activeItem.name : ""}</p>
               <ul className="mt-4">
                 {activeItem && activeItem.items.map((menu)=>(
-                  <li key={menu.id} className="px-2 py-1 my-1 hover:bg-base-300 hover:font-medium rounded-lg cursor-pointer flex justify-start items-center">{menu.name}</li>
+                  <li key={menu.id} className="px-2 py-1 my-1 hover:bg-base-300 hover:font-medium hover:text-maincolor rounded-lg cursor-pointer flex justify-start items-center">{menu.name}</li>
                 ))}
               </ul>
             </div>
