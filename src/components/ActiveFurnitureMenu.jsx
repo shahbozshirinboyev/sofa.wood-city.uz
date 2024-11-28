@@ -20,14 +20,23 @@ function ActiveFurnitureMenu() {
       {activeMenuItem?.items && (
         <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-8 pb-8">
           {activeMenuItem.items.map((item) => (
-            <li className="border p-4 group  transition-all duration-300 ease-in-out" key={item.id}>
-              <h1 className="font-semibold">{item.name}</h1>
-              <span className="font-bold opacity-40 text-[14px]">
-                {item.price}
-              </span>
-              <div className="py-6 flex justify-center items-center">
-                <i className="bi bi-chevron-right hidden group-hover:block transition-all duration-300 ease-in-out transform group-hover:translate-x-2"></i>
-                <img src={item.image} className="mx-auto transition-all duration-300 ease-in-out" alt="" />
+            <li
+              className="border p-4 group transition-all duration-300 ease-in-out transform hover:scale-100 flex flex-col justify-between"
+              key={item.id}
+            >
+              <div className="flex-grow">
+                <h1 className="font-semibold">{item.name}</h1>
+                <span className="font-bold opacity-40 text-[14px]">
+                  {item.price}
+                </span>
+              </div>
+              <div className="py-6 flex justify-center items-end">
+                <i className="bi bi-chevron-right opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                <img
+                  src={item.image}
+                  className="mx-auto w-[140px] transition-all duration-300 ease-in-out transform group-hover:scale-105"
+                  alt=""
+                />
               </div>
             </li>
           ))}
