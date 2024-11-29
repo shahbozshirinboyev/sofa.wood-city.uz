@@ -22,13 +22,13 @@ function ActiveFurnitureMenuItems() {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3  xl:grid-cols-4 gap-4">
           {activeMenuFurniture?.items.map((product) => (
-            <div className="border p-2">
+            <div className="border py-2 px-4">
               <img src={product.image0} alt="" className="h-[220px] mx-auto" />
-              <div className="grid grid-cols-2 border gap-4">
-                <p className="text-start line-clamp-2">{product.name}</p>
+              <div className="flex gap-4">
+                <p className="text-start line-clamp-2 font-semibold w-full">{product.name}</p>
                 <div className="text-end">
-                  <p className="whitespace-nowrap">{product.price}</p>
-                  <p className="whitespace-nowrap">{product.fixprice}</p>
+                  <p className="whitespace-nowrap font-semibold">{product.price}</p>
+                  <p className="whitespace-nowrap line-through text-[14px] font-semibold opacity-50">{product.fixprice}</p>
                 </div>
               </div>
               <p>{product.status}</p>
