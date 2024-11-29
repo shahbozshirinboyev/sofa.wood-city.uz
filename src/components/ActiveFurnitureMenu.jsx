@@ -29,8 +29,8 @@ function ActiveFurnitureMenu() {
               className="border p-4 group transition-all duration-300 ease-in-out transform hover:scale-100 flex flex-col justify-between"
               key={item.id}
               to="/activefurnituremenuitems"
-              state={{ activeMenuFurniture: item.items }}
-              onClick={()=>{setActiveMenuFurniture(item.items)}}
+              state={{ activeMenuFurniture: item }}
+              onClick={()=>{setActiveMenuFurniture(item)}}
             >
               <div className="flex-grow">
                 <h1 className="font-semibold">{item.name}</h1>

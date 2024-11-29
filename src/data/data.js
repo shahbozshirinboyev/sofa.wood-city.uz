@@ -213,6 +213,9 @@ export const furniture = [
         items: [
           {
             name: "bu oxirgi product"
+          },
+          {
+            name: "oxirgi 2-project"
           }
         ],
       },

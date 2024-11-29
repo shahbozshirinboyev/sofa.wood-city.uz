@@ -8,7 +8,7 @@ function Navbar() {
   const [activeMenuItem, setActiveMenuItem] = useState(furniture[0]);
   const [activeMenuFurniture, setActiveMenuFurniture] = useState(furniture[0].items[0]);
 
-  console.log(furniture[0]);
+  // console.log(furniture[0]);
 
   const handleMouseEnter = (id) => {
     setActiveItem(id);
@@ -113,9 +113,9 @@ function Navbar() {
                     <NavLink
                       key={menu.id}
                       to="/activefurnituremenuitems"
-                      state={{ activeMenuFurniture: menu.items }}
+                      state={{ activeMenuFurniture: menu }}
                       onClick={() => {
-                        setActiveMenuFurniture(menu.items);
+                        setActiveMenuFurniture(menu);
                         document.getElementById("menunavbar").close();
                       }}
                       className="px-2 py-1 my-1 hover:bg-base-300 hover:font-medium hover:text-maincolor rounded-lg cursor-pointer flex justify-start items-center"

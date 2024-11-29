@@ -3,14 +3,16 @@ import { useLocation } from "react-router-dom";
 function ActiveFurnitureMenuItems() {
   const location = useLocation();
   const activeMenuFurniture = location.state?.activeMenuFurniture;
+  console.log(activeMenuFurniture)
   return (
     <>
       <div className="container py-8">
         <p>ActiveFurnitureMenuItems</p>
         <div>
-          {activeMenuFurniture?.map((product) => (
+          {/* {activeMenuFurniture?.map((product) => (
             <p>{product.name}</p>
-          ))}
+          ))} */}
+          <p>{activeMenuFurniture.name}</p>
         </div>
       </div>
     </>
