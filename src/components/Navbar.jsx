@@ -6,6 +6,7 @@ import { useState } from "react";
 function Navbar() {
   const [activeItem, setActiveItem] = useState(furniture[0]);
   const [activeMenuItem, setActiveMenuItem] = useState(furniture[0]);
+  const [activeMenuFurniture, setActiveMenuFurniture] = useState(furniture[0].items[0]);
 
   console.log(furniture[0]);
 
@@ -63,7 +64,11 @@ function Navbar() {
         <div className="py-4 hidden lg:block lg:text-[14px] xl:text-[16px]">
           <ul className="flex justify-between items-center font-medium transition-all duration-200">
             {furniture.map((menu) => (
-              <li key={menu.id} data-tip={`${menu.name}`} className="tooltip btn btn-sm w-[80px] hover:font-medium hover:text-maincolor cursor-pointer whitespace-nowrap text-[9px] flex items-center justify-center">
+              <li
+                key={menu.id}
+                data-tip={`${menu.name}`}
+                className="tooltip btn btn-sm w-[80px] hover:font-medium hover:text-maincolor cursor-pointer whitespace-nowrap text-[9px] flex items-center justify-center"
+              >
                 <img src={menu.icon} alt="" />
               </li>
             ))}
@@ -80,9 +85,16 @@ function Navbar() {
                   to="/activefurnituremenu"
                   key={menu.id}
                   state={{ activeMenuItem: menu }}
-                  onClick={()=>{setActiveMenuItem(menu); document.getElementById("menunavbar").close()}}
+                  onClick={() => {
+                    setActiveMenuItem(menu);
+                    document.getElementById("menunavbar").close();
+                  }}
                   onMouseEnter={() => handleMouseEnter(menu)}
-                  className={`flex justify-start items-center active:border-0 p-2 m-1 relative ${ activeItem !== null && activeItem.id === menu.id ? "bg-base-300 font-medium text-maincolor": ""} rounded-lg cursor-pointer transition-all duration-100 ease-in-out`}
+                  className={`flex justify-start items-center active:border-0 p-2 m-1 relative ${
+                    activeItem !== null && activeItem.id === menu.id
+                      ? "bg-base-300 font-medium text-maincolor"
+                      : ""
+                  } rounded-lg cursor-pointer transition-all duration-100 ease-in-out`}
                 >
                   <img src={menu.icon} alt={menu.name} className="px-2" />
                   <span>{menu.name}</span>
@@ -92,11 +104,25 @@ function Navbar() {
             </ul>
 
             <div className="m-1 hidden md:block">
-              <p className="font-bold text-[20px]">{activeItem !== null ? activeItem.name : ""}</p>
+              <p className="font-bold text-[20px]">
+                {activeItem !== null ? activeItem.name : ""}
+              </p>
               <ul className="mt-4">
-                {activeItem && activeItem.items.map((menu)=>(
-                  <li key={menu.id} className="px-2 py-1 my-1 hover:bg-base-300 hover:font-medium hover:text-maincolor rounded-lg cursor-pointer flex justify-start items-center">{menu.name}</li>
-                ))}
+                {activeItem &&
+                  activeItem.items.map((menu) => (
+                    <NavLink
+                      key={menu.id}
+                      to="/activefurnituremenuitems"
+                      state={{ activeMenuFurniture: menu.items }}
+                      onClick={() => {
+                        setActiveMenuFurniture(menu.items);
+                        document.getElementById("menunavbar").close();
+                      }}
+                      className="px-2 py-1 my-1 hover:bg-base-300 hover:font-medium hover:text-maincolor rounded-lg cursor-pointer flex justify-start items-center"
+                    >
+                      {menu.name}
+                    </NavLink>
+                  ))}
               </ul>
             </div>
           </div>

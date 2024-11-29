@@ -1,8 +1,12 @@
-import { useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
+import { useState } from "react";
 
 function ActiveFurnitureMenu() {
   const location = useLocation();
   const activeMenuItem = location.state?.activeMenuItem;
+
+  
+  const [activeMenuFurniture, setActiveMenuFurniture] = useState(activeMenuItem.items[0]);
 
   return (
     <div className="container">
@@ -21,9 +25,12 @@ function ActiveFurnitureMenu() {
       {activeMenuItem?.items && (
         <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-8 pb-8">
           {activeMenuItem.items.map((item) => (
-            <li
+            <NavLink
               className="border p-4 group transition-all duration-300 ease-in-out transform hover:scale-100 flex flex-col justify-between"
               key={item.id}
+              to="/activefurnituremenuitems"
+              state={{ activeMenuFurniture: item.items }}
+              onClick={()=>{setActiveMenuFurniture(item.items)}}
             >
               <div className="flex-grow">
                 <h1 className="font-semibold">{item.name}</h1>
@@ -39,7 +46,7 @@ function ActiveFurnitureMenu() {
                   alt=""
                 />
               </div>
-            </li>
+            </NavLink>
           ))}
         </ul>
       )}
