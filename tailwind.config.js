@@ -2,6 +2,9 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    lineClamp: {
+      2: '2',
+    },
     extend: {
       colors: {
         maincolor: "#34853D",
@@ -19,6 +22,6 @@ export default {
     },
     
   },
-  plugins: [require('daisyui'),],
+  plugins: [require('daisyui'), ],
   daisyui: { darkTheme: false, },
 };

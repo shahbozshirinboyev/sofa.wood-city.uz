@@ -51,25 +51,6 @@ function ActiveFurnitureMenu() {
         </ul>
       )}
 
-      <div>
-        <p className="py-12">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam exercitationem dicta doloribus dolores aut quaerat atque error dolor eveniet quis voluptas pariatur, fugiat deserunt molestias non nobis earum. Veritatis, neque?
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam exercitationem dicta doloribus dolores aut quaerat atque error dolor eveniet quis voluptas pariatur, fugiat deserunt molestias non nobis earum. Veritatis, neque?
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam exercitationem dicta doloribus dolores aut quaerat atque error dolor eveniet quis voluptas pariatur, fugiat deserunt molestias non nobis earum. Veritatis, neque?
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam exercitationem dicta doloribus dolores aut quaerat atque error dolor eveniet quis voluptas pariatur, fugiat deserunt molestias non nobis earum. Veritatis, neque?
-        </p>
-        <p className="py-12">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam exercitationem dicta doloribus dolores aut quaerat atque error dolor eveniet quis voluptas pariatur, fugiat deserunt molestias non nobis earum. Veritatis, neque?
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam exercitationem dicta doloribus dolores aut quaerat atque error dolor eveniet quis voluptas pariatur, fugiat deserunt molestias non nobis earum. Veritatis, neque?
-        </p>
-        <p className="py-12">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam exercitationem dicta doloribus dolores aut quaerat atque error dolor eveniet quis voluptas pariatur, fugiat deserunt molestias non nobis earum. Veritatis, neque?
-        </p>
-        <p className="py-12">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam exercitationem dicta doloribus dolores aut quaerat atque error dolor eveniet quis voluptas pariatur, fugiat deserunt molestias non nobis earum. Veritatis, neque?
-        </p>
-      </div>
-
     </div>
   );
 }
