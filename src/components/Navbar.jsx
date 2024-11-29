@@ -10,10 +10,10 @@ function Navbar() {
   console.log(furniture[0]);
 
   const handleMouseEnter = (id) => {
-    setActiveItem(id); // Hover bo'lganda item id'sini saqlash
+    setActiveItem(id);
   };
   const handleMouseLeave = () => {
-    setActiveItem(null); // Hoverdan chiqqanda holatni o'chirish
+    setActiveItem(null);
   };
 
   return (
@@ -34,7 +34,6 @@ function Navbar() {
               <input type="checkbox" className="hidden" />
 
               <i className="bi bi-list text-[24px] px-3 flex justify-center items-center fill-current "></i>
-              {/* <i className="bi bi-x text-[24px] px-3 flex justify-center items-center swap-on fill-current absolute left-0"></i> */}
 
               <p className="whitespace-nowrap h-full pr-3 hidden md:flex justify-center items-center font-medium">
                 Каталог мебели

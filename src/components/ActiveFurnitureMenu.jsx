@@ -6,6 +6,7 @@ function ActiveFurnitureMenu() {
 
   return (
     <div className="container">
+
       <h1 className="text-xl md:text-2xl lg:text-3xl font-bold py-4">
         {activeMenuItem?.name}
       </h1>
@@ -30,11 +31,11 @@ function ActiveFurnitureMenu() {
                   {item.price}
                 </span>
               </div>
-              <div className="py-6 flex justify-center items-end">
+              <div className="py-6 flex justify-center items-end mt-2">
                 <i className="bi bi-chevron-right opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
                 <img
                   src={item.image}
-                  className="mx-auto w-[140px] transition-all duration-300 ease-in-out transform group-hover:scale-105"
+                  className="mx-auto h-[50px] transition-all duration-300 ease-in-out transform group-hover:scale-105"
                   alt=""
                 />
               </div>
@@ -42,6 +43,26 @@ function ActiveFurnitureMenu() {
           ))}
         </ul>
       )}
+
+      <div>
+        <p className="py-12">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam exercitationem dicta doloribus dolores aut quaerat atque error dolor eveniet quis voluptas pariatur, fugiat deserunt molestias non nobis earum. Veritatis, neque?
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam exercitationem dicta doloribus dolores aut quaerat atque error dolor eveniet quis voluptas pariatur, fugiat deserunt molestias non nobis earum. Veritatis, neque?
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam exercitationem dicta doloribus dolores aut quaerat atque error dolor eveniet quis voluptas pariatur, fugiat deserunt molestias non nobis earum. Veritatis, neque?
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam exercitationem dicta doloribus dolores aut quaerat atque error dolor eveniet quis voluptas pariatur, fugiat deserunt molestias non nobis earum. Veritatis, neque?
+        </p>
+        <p className="py-12">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam exercitationem dicta doloribus dolores aut quaerat atque error dolor eveniet quis voluptas pariatur, fugiat deserunt molestias non nobis earum. Veritatis, neque?
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam exercitationem dicta doloribus dolores aut quaerat atque error dolor eveniet quis voluptas pariatur, fugiat deserunt molestias non nobis earum. Veritatis, neque?
+        </p>
+        <p className="py-12">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam exercitationem dicta doloribus dolores aut quaerat atque error dolor eveniet quis voluptas pariatur, fugiat deserunt molestias non nobis earum. Veritatis, neque?
+        </p>
+        <p className="py-12">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam exercitationem dicta doloribus dolores aut quaerat atque error dolor eveniet quis voluptas pariatur, fugiat deserunt molestias non nobis earum. Veritatis, neque?
+        </p>
+      </div>
+
     </div>
   );
 }
