@@ -13,7 +13,7 @@ function ActiveFurnitureMenuItems() {
         </h1>
 
         <div className="flex gap-8 pb-6">
-          <p className="text-[14px] text-clamp-2">{activeMenuFurniture?.description}</p>
+          <p className="text-[14px]">{activeMenuFurniture?.description}</p>
           <img
             src={activeMenuFurniture?.image}
             alt=""
@@ -25,7 +25,7 @@ function ActiveFurnitureMenuItems() {
             <div className="border p-2">
               <img src={product.image0} alt="" className="h-[220px] mx-auto" />
               <div className="grid grid-cols-2 border gap-4">
-                <p className="text-start text-clamp-2">{product.name}</p>
+                <p className="text-start line-clamp-2">{product.name}</p>
                 <div className="text-end">
                   <p className="whitespace-nowrap">{product.price}</p>
                   <p className="whitespace-nowrap">{product.fixprice}</p>
