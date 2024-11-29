@@ -33,10 +33,7 @@ function ActiveFurnitureMenuItems() {
                 </div>
               </div>
 
-              <div className="pt-4 flex gap-4">
-                <button className="btn btn-sm flex-1"><i className="bi bi-arrow-up-right"></i> Подробнее </button>
-                <button className="btn btn-sm flex-1"><i class="bi bi-cart"></i> В корзину </button>
-              </div>
+              
 
               <div className="py-4">
                 <p className="font-semibold">Габариты:</p>
@@ -45,6 +42,11 @@ function ActiveFurnitureMenuItems() {
                   <div> <p className="opacity-60">Ширина</p> <p>103 sm</p> </div>
                   <div> <p className="opacity-60">Высота</p> <p>90 sm</p> </div>
                 </div>
+              </div>
+
+              <div className="pt-4 flex gap-4">
+                <button className="btn btn-sm flex-1"><i className="bi bi-arrow-up-right"></i> Подробнее </button>
+                <button className="btn btn-sm flex-1"><i class="bi bi-cart"></i> В корзину </button>
               </div>
 
               {/* 
