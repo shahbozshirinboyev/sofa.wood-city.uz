@@ -1,33 +1,33 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { furniture } from "../data/data";
 import logo from "/favicon/wood_city.png";
 import { useState } from "react";
 
 function Navbar() {
+  const navigate = useNavigate();
   const [activeItem, setActiveItem] = useState(furniture[0]);
   const [activeMenuItem, setActiveMenuItem] = useState(furniture[0]);
   const [activeMenuFurniture, setActiveMenuFurniture] = useState(furniture[0].items[0]);
 
-  // console.log(furniture[0]);
-
-  const handleMouseEnter = (id) => {
-    setActiveItem(id);
-  };
-  const handleMouseLeave = () => {
-    setActiveItem(null);
-  };
+  const handleMouseEnter = (id) => { setActiveItem(id); };
+  // const handleMouseLeave = () => { setActiveItem(null); };
 
   return (
     <>
       <div className="container">
         <div className="flex md:flex-wrap lg:flex-nowrap py-4">
-          <div className="flex-1 order-2 md:order-1 flex justify-center md:justify-start items-center">
+          {/* Logo START */}
+          <div
+            onClick={() => navigate("/")}
+            className="flex-1 order-2 md:order-1 flex justify-center md:justify-start items-center"
+          >
             <div className="w-[180px] cursor-pointer">
-              <img src={logo} alt="" />
+              <img src={logo} alt="logo" />
             </div>
           </div>
-
+          {/* Logo END */}
           <div className="flex w-auto md:w-full lg:px-12 xl:px-24 order-1 md:order-3 lg:order-2 md:pt-4 lg:pt-0">
+
             <label
               onClick={() => document.getElementById("menunavbar").showModal()}
               className="bg-maincolor text-white swap swap-rotate active:scale-90 transition-all duration-200 flex justify-center items-center relative"
@@ -51,6 +51,7 @@ function Navbar() {
                 <i className="bi bi-search flex justify-center items-center text-[20px]"></i>
               </button>
             </label>
+
           </div>
 
           <div className="flex-none md:flex-1 order-3  md:order-2 lg:order-3 flex justify-end items-center">
@@ -59,6 +60,7 @@ function Navbar() {
               <p className="text-center text-[12px] font-medium">Избранное</p>
             </div>
           </div>
+
         </div>
 
         <div className="py-4 hidden lg:block lg:text-[14px] xl:text-[16px]">
@@ -67,15 +69,17 @@ function Navbar() {
               <li
                 key={menu.id}
                 data-tip={`${menu.name}`}
-                className="tooltip btn btn-sm w-[80px] hover:font-medium hover:text-maincolor cursor-pointer whitespace-nowrap text-[9px] flex items-center justify-center"
+                className="tooltip btn btn-sm w-[80px] hover:font-medium hover:text-maincolor cursor-pointer whitespace-nowrap text-[9px] flex flex-col items-center justify-center"
               >
                 <img src={menu.icon} alt="" />
+                {/* <span>{menu.name}</span> */}
               </li>
             ))}
           </ul>
         </div>
       </div>
 
+      {/* Catalog Furniture START MODAL */}
       <dialog id="menunavbar" className="modal">
         <div className="modal-box w-11/12 max-w-4xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -131,6 +135,7 @@ function Navbar() {
           <button>close</button>
         </form>
       </dialog>
+      {/* Catalog Furniture END MODAL */}
     </>
   );
 }
