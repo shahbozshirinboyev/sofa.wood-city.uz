@@ -7,9 +7,13 @@ function Navbar() {
   const navigate = useNavigate();
   const [activeItem, setActiveItem] = useState(furniture[0]);
   const [activeMenuItem, setActiveMenuItem] = useState(furniture[0]);
-  const [activeMenuFurniture, setActiveMenuFurniture] = useState(furniture[0].items[0]);
+  const [activeMenuFurniture, setActiveMenuFurniture] = useState(
+    furniture[0].items[0]
+  );
 
-  const handleMouseEnter = (id) => { setActiveItem(id); };
+  const handleMouseEnter = (id) => {
+    setActiveItem(id);
+  };
   // const handleMouseLeave = () => { setActiveItem(null); };
 
   return (
@@ -27,7 +31,6 @@ function Navbar() {
           </div>
           {/* Logo END */}
           <div className="flex w-auto md:w-full lg:px-12 xl:px-24 order-1 md:order-3 lg:order-2 md:pt-4 lg:pt-0">
-
             <label
               onClick={() => document.getElementById("menunavbar").showModal()}
               className="bg-maincolor text-white swap swap-rotate active:scale-90 transition-all duration-200 flex justify-center items-center relative"
@@ -51,7 +54,6 @@ function Navbar() {
                 <i className="bi bi-search flex justify-center items-center text-[20px]"></i>
               </button>
             </label>
-
           </div>
 
           <div className="flex-none md:flex-1 order-3  md:order-2 lg:order-3 flex justify-end items-center">
@@ -60,20 +62,22 @@ function Navbar() {
               <p className="text-center text-[12px] font-medium">Избранное</p>
             </div>
           </div>
-
         </div>
 
         <div className="py-4 hidden lg:block lg:text-[14px] xl:text-[16px]">
           <ul className="flex justify-between items-center font-medium transition-all duration-200">
             {furniture.map((menu) => (
-              <li
+              <NavLink
+                to="/activefurnituremenu"
                 key={menu.id}
+                state={{ activeMenuItem: menu }}
+                onClick={() => { setActiveMenuItem(menu); }}
                 data-tip={`${menu.name}`}
                 className="tooltip btn btn-sm w-[80px] hover:font-medium hover:text-maincolor cursor-pointer whitespace-nowrap text-[9px] flex flex-col items-center justify-center"
               >
                 <img src={menu.icon} alt="" />
                 {/* <span>{menu.name}</span> */}
-              </li>
+              </NavLink>
             ))}
           </ul>
         </div>

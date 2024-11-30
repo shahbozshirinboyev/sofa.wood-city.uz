@@ -6,6 +6,7 @@ function ActiveFurnitureMenuItems() {
   console.log(activeMenuFurniture);
   return (
     <>
+    
       <div className="container py-8">
         <h1 className="text-xl md:text-2xl lg:text-3xl font-bold py-4">
           {activeMenuFurniture?.name}
@@ -19,6 +20,10 @@ function ActiveFurnitureMenuItems() {
             className="w-[100px] h-[100%] object-cover"
           />
         </div>
+
+        {
+        activeMenuFurniture.items.length === 0 ? <p className="text-center text-xl"><i className="bi bi-layout-wtf text-3xl"></i> <br /> No product!</p> : ""
+      }
         <div className="grid grid-cols-2 md:grid-cols-3  xl:grid-cols-4 gap-4">
           {/* Card Design START */}
           {activeMenuFurniture?.items.map((product) => (
@@ -64,6 +69,7 @@ function ActiveFurnitureMenuItems() {
               </div>
             </div>
           ))}
+         
           {/* Card Design END */}
         </div>
       </div>

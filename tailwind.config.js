@@ -9,11 +9,11 @@ export default {
       container: {
         center: true,
         padding: {
-          DEFAULT: "0.5rem",
-          "sm ": "0.5rem",
-          "lg ": "0.7rem",
-          "xl ": "1.5rem",
-          "2xl": "1.5rem",
+          DEFAULT: "1rem",
+          "sm ": "1rem",
+          "lg ": "2rem",
+          "xl ": "4rem",
+          "2xl": "6rem",
         },
       },
     },

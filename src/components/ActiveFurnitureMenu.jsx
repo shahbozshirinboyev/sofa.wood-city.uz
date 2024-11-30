@@ -5,23 +5,29 @@ function ActiveFurnitureMenu() {
   const location = useLocation();
   const activeMenuItem = location.state?.activeMenuItem;
 
-  
-  const [activeMenuFurniture, setActiveMenuFurniture] = useState(activeMenuItem.items[0]);
+  const [activeMenuFurniture, setActiveMenuFurniture] = useState(
+    activeMenuItem.items[0]
+  );
 
   return (
     <div className="container">
 
-      <h1 className="text-xl md:text-2xl lg:text-3xl font-bold py-4">
-        {activeMenuItem?.name}
-      </h1>
+      {/* Furniture type START */}
+      <h1 className="text-xl md:text-2xl lg:text-3xl font-bold py-4"> {activeMenuItem?.name} </h1>
       <div className="flex gap-8 pb-6">
         <p className="text-[14px]">{activeMenuItem?.description}</p>
         <img
           src={activeMenuItem?.image}
-          alt=""
+          alt={activeMenuItem?.name}
           className="w-[100px] h-[100%] object-cover"
         />
       </div>
+      {/* Furniture type END */}
+
+      {
+        activeMenuItem.items.length === 0 ? <p className="text-center text-xl"><i className="bi bi-layout-wtf text-3xl"></i> <br /> No product type!</p> : ""
+      }
+
       {activeMenuItem?.items && (
         <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-8 pb-8">
           {activeMenuItem.items.map((item) => (
@@ -30,7 +36,9 @@ function ActiveFurnitureMenu() {
               key={item.id}
               to="/activefurnituremenuitems"
               state={{ activeMenuFurniture: item }}
-              onClick={()=>{setActiveMenuFurniture(item)}}
+              onClick={() => {
+                setActiveMenuFurniture(item);
+              }}
             >
               <div className="flex-grow">
                 <h1 className="font-semibold">{item.name}</h1>
@@ -50,7 +58,6 @@ function ActiveFurnitureMenu() {
           ))}
         </ul>
       )}
-
     </div>
   );
 }
