@@ -66,12 +66,12 @@ function HomePage() {
       </div>
 
       <div className="container grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-0 py-4">
-        <div className="border p-8 bg-[url('/images/home/home_mini_menu.jpg')] bg-cover text-white">
+        <div className="border p-8 bg-[url('/images/home/home_mini_menu.jpg')] bg-center bg-cover text-white">
           {/* <img src="/images/home/home_mini_menu.jpg" alt="" className="absolute top-0 left-0 object-cover" /> */}
           <p className="font-medium text-xl">Полезно знать при выборе мебели</p>
           <ul className="py-4">
             <li className="py-2">Дизайн гостиной 2023 года</li>
-            <li>Шкафы 2023</li>
+            <li className="">Шкафы 2023</li>
             <li className="py-2">Кровати 2023</li>
             <li>Стулья 2023</li>
             <li className="py-2">Кресла 2023</li>
