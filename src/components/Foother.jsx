@@ -6,7 +6,7 @@ function Foother() {
       <div className="container py-4 grid grid-cols-2">
         <img src={logo} alt="Logo" className='w-[220px]' />
         <div className="flex justify-center md:justify-end items-center">
-          <i className="bi bi-geo-alt-fill px-2"></i> <p>Москва</p>
+          <i className="bi bi-geo-alt-fill px-2"></i> <p>Ташкент</p>
         </div>
       </div>
       <div className="container py-4">
@@ -44,7 +44,7 @@ function Foother() {
       <div className="container py-4">
         <div className="grid grid-cols-2 gap-4 text-[14px]">
           <div className="grid grid-cols-1 xl:grid-cols-3">
-            <p className="font-bold py-1">2022 ООО «Мебель.ру»</p>
+            <p className="font-bold py-1">2024 ООО «WoodCity.Uz»</p>
             <p className="py-1">Обновлено 26.11.2024</p>
             <p className="py-1">Пользовательское соглашение</p>
           </div>
