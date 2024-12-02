@@ -49,21 +49,172 @@ function HomePage() {
           «Мебель.Ру» - ваш гид в мире мебели!
         </p>
       </div>
-
+      {/* Mini Catalog START */}
       <div className="container py-8">
         <p className="text-center text-3xl font-bold">Мебель в Ташкенте</p>
 
         <div className="grid grid-cols-2 xl:grid-cols-4 gap-4 py-8">
-          <div className="col-span-2 order-1 h-[200px] border">01 Диваны</div>
-          <div className="col-span-2 xl:col-span-1 xl:row-span-2 order-4 xl:order-2 border min-h-[200px]">
-            02 Кухни
+
+          <div className="col-span-2 order-1 border group relative">
+            <div className="grid grid-cols-2 text-maincolor p-4">
+              <div className="pb-4">
+                <p className="font-bold">Диваны</p>
+                <span className="font-bold opacity-50 text-[12px]">от 1 020 руб.</span>
+              </div>
+              <div className="text-end font-bold opacity-50">
+                <span className="text-[12px]">51 953</span>
+              </div>
+            </div>
+            <div className="px-4 pb-4 transition-all duration-300">
+              <ul className="font-semibold">
+                <li className="w-fit hover:text-maincolor transition-all duration-300 cursor-pointer mb-2">
+                  Диваны тканевые
+                </li>
+                <li className="w-fit hover:text-maincolor transition-all duration-300 cursor-pointer mb-2">
+                  Прямые диваны
+                </li>
+                <li className="w-fit hover:text-maincolor transition-all duration-300 cursor-pointer mb-2">
+                  Угловые диваны
+                </li>
+              </ul>
+            </div>
+            <img src="/images/mini_catalog/sofas.png" alt="" className="hidden xl:block absolute bottom-0 left-1/2 transform -translate-x-1/2 group-hover:opacity-0 transition-all duration-300" />
           </div>
-          <div className="order-2 xl:order-3 h-[200px] border">03 Шкафы</div>
-          <div className="order-3 xl:order-4 h-[200px] border">04 Матрасы</div>
-          <div className="order-5 xl:order-5 h-[200px] border">05 Кровати</div>
-          <div className="order-6 xl:order-6 h-[200px] border">06 Стулья</div>
+
+          <div className="col-span-2 xl:col-span-1 xl:row-span-2 order-4 xl:order-2 border min-h-[200px]">
+            <div className="col-span-2 order-1 p-4">
+              <div className="grid grid-cols-2 text-maincolor">
+                <div className="pb-4">
+                  <p className="font-bold">Кухни</p>
+                  <span className="font-bold opacity-50 text-[12px]">от 1 020 руб.</span>
+                </div>
+                <div className="text-end font-bold opacity-50">
+                  <span className="text-[12px]">51 953</span>
+                </div>
+              </div>
+              <div>
+                <ul className="font-semibold">
+                  <li className="w-fit hover:text-maincolor transition-all duration-300 cursor-pointer mb-2">
+                    Диваны тканевые
+                  </li>
+                  <li className="w-fit hover:text-maincolor transition-all duration-300 cursor-pointer mb-2">
+                    Прямые диваны
+                  </li>
+                  <li className="w-fit hover:text-maincolor transition-all duration-300 cursor-pointer mb-2">
+                    Угловые диваны
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="order-2 xl:order-3 border">
+            <div className="col-span-2 order-1 p-4">
+              <div className="grid grid-cols-2 text-maincolor">
+                <div className="pb-4">
+                  <p className="font-bold">Шкафы</p>
+                  <span className="font-bold opacity-50 text-[12px]">от 1 020 руб.</span>
+                </div>
+                <div className="text-end font-bold opacity-50">
+                  <span className="text-[12px]">51 953</span>
+                </div>
+              </div>
+              <div>
+                <ul className="font-semibold">
+                  <li className="w-fit hover:text-maincolor transition-all duration-300 cursor-pointer mb-2">
+                    Диваны тканевые
+                  </li>
+                  <li className="w-fit hover:text-maincolor transition-all duration-300 cursor-pointer mb-2">
+                    Прямые диваны
+                  </li>
+                  <li className="w-fit hover:text-maincolor transition-all duration-300 cursor-pointer mb-2">
+                    Угловые диваны
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="order-3 xl:order-4 border">
+            <div className="col-span-2 order-1 p-4">
+              <div className="grid grid-cols-2 text-maincolor">
+                <div className="pb-4">
+                  <p className="font-bold">Матрасы</p>
+                  <span className="font-bold opacity-50 text-[12px]">от 1 020 руб.</span>
+                </div>
+                <div className="text-end font-bold opacity-50">
+                  <span className="text-[12px]">51 953</span>
+                </div>
+              </div>
+              <div>
+                <ul className="font-semibold">
+                  <li className="w-fit hover:text-maincolor transition-all duration-300 cursor-pointer mb-2">
+                    Диваны тканевые
+                  </li>
+                  <li className="w-fit hover:text-maincolor transition-all duration-300 cursor-pointer mb-2">
+                    Прямые диваны
+                  </li>
+                  <li className="w-fit hover:text-maincolor transition-all duration-300 cursor-pointer mb-2">
+                    Угловые диваны
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="order-5 xl:order-5 border">
+            <div className="col-span-2 order-1 p-4">
+              <div className="grid grid-cols-2 text-maincolor">
+                <div className="pb-4">
+                  <p className="font-bold">Кровати</p>
+                  <span className="font-bold opacity-50 text-[12px]">от 1 020 руб.</span>
+                </div>
+                <div className="text-end font-bold opacity-50">
+                  <span className="text-[12px]">51 953</span>
+                </div>
+              </div>
+              <div>
+                <ul className="font-semibold">
+                  <li className="w-fit hover:text-maincolor transition-all duration-300 cursor-pointer mb-2">
+                    Диваны тканевые
+                  </li>
+                  <li className="w-fit hover:text-maincolor transition-all duration-300 cursor-pointer mb-2">
+                    Прямые диваны
+                  </li>
+                  <li className="w-fit hover:text-maincolor transition-all duration-300 cursor-pointer mb-2">
+                    Угловые диваны
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="order-6 xl:order-6 border">
+            <div className="col-span-2 order-1 p-4">
+              <div className="grid grid-cols-2 text-maincolor">
+                <div className="pb-4">
+                  <p className="font-bold">Стулья</p>
+                  <span className="font-bold opacity-50 text-[12px]">от 1 020 руб.</span>
+                </div>
+                <div className="text-end font-bold opacity-50">
+                  <span className="text-[12px]">51 953</span>
+                </div>
+              </div>
+              <div>
+                <ul className="font-semibold">
+                  <li className="w-fit hover:text-maincolor transition-all duration-300 cursor-pointer mb-2">
+                    Диваны тканевые
+                  </li>
+                  <li className="w-fit hover:text-maincolor transition-all duration-300 cursor-pointer mb-2">
+                    Прямые диваны
+                  </li>
+                  <li className="w-fit hover:text-maincolor transition-all duration-300 cursor-pointer mb-2">
+                    Угловые диваны
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      {/* Mini Catalog END */}
+
       {/* Useful to know when choosing furniture */}
       <div className="container grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-0 py-4">
         <div class="border text-white group relative items-center justify-center overflow-hidden">
@@ -112,22 +263,33 @@ function HomePage() {
       </div>
       {/* Useful to know when choosing furniture */}
       <div className="bg-maincolor">
+        <div className="container grid grid-cols-1 lg:grid-cols-2 gap-4 py-4">
+          <div className="text-white">
+            <h2 className="font-semibold">
+              Подпишись и узнай раньше всех о скидках, акциях, распродажах и
+              полезных статьях
+            </h2>
+            <p className="text-[12px]">
+              Подписываясь я соглашаюсь с{" "}
+              <span className="underline cursor-pointer">
+                условиями обработки персональных данных
+              </span>
+            </p>
+          </div>
 
-      <div className="container grid grid-cols-1 lg:grid-cols-2 gap-4 py-4">
-
-        <div className="text-white">
-          <h2 className="font-semibold">Подпишись и узнай раньше всех о скидках, акциях, распродажах и полезных статьях</h2>
-          <p className="text-[12px]">Подписываясь я соглашаюсь с <span className="underline cursor-pointer">условиями обработки персональных данных</span></p>
+          <div>
+            <form action="" className="flex py-2">
+              <input
+                type="text"
+                placeholder="Ваш E-mail"
+                className="text-white outline-none border rounded bg-transparent placeholder:text-white py-1 px-2 w-full"
+              />
+              <button className="px-6 md:px-8 py-1 rounded bg-white ml-2 justify-center items-center font-semibold hover:text-maincolor transition-all duration-300">
+                Подписаться
+              </button>
+            </form>
+          </div>
         </div>
-
-        <div>
-          <form action="" className="flex py-2">
-            <input type="text" placeholder="Ваш E-mail" className="text-white outline-none border rounded bg-transparent placeholder:text-white py-1 px-2 w-full" />
-            <button className="px-6 md:px-8 py-1 rounded bg-white ml-2 justify-center items-center font-semibold hover:text-maincolor transition-all duration-300">Подписаться</button>
-          </form>
-        </div>
-
-      </div>
       </div>
     </>
   );
