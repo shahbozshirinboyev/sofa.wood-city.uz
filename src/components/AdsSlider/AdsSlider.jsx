@@ -86,24 +86,14 @@ function AdsSlider({children}) {
         })}
       </div>
 
-      <button
-        className="slider__btn-next"
-        onClick={(e) => {
-          e.preventDefault();
-          slideNext();
-        }}
-      >
-        {">"}
+      <button className="slider__btn-next mr-2" onClick={(e) => { e.preventDefault(); slideNext(); }}>
+        <i className="bi bi-chevron-right bg-white p-1 text-[16px] text-black"></i>
       </button>
-      <button
-        className="slider__btn-prev"
-        onClick={(e) => {
-          e.preventDefault();
-          slidePrev();
-        }}
-      >
-        {"<"}
+
+      <button className="slider__btn-prev ml-2" onClick={(e) => { e.preventDefault(); slidePrev(); }}>
+        <i className="bi bi-chevron-left bg-white p-1 text-[16px] text-black"></i>
       </button>
+
     </div>
   );
 }
