@@ -69,7 +69,7 @@ function HomePage() {
 
             <img
               src="/images/mini_catalog/sofas.png"
-              className="h-[70%] hidden xl:block group-hover:hidden absolute bottom-0 left-1/2 transform -translate-x-1/2 transition-all duration-300"
+              className="h-[70%] hidden xl:block group-hover:opacity-0 group-hover:invisible opacity-100 visible absolute bottom-0 left-1/2 transform -translate-x-1/2 transition-all duration-300"
             />
 
             <div className="transition-all duration-300 group-hover:opacity-100 opacity-100 xl:opacity-0">
@@ -88,9 +88,7 @@ function HomePage() {
           </div>
 
           <div className="col-span-2 xl:col-span-1 xl:row-span-2 order-4 xl:order-2 border">
-
             <div className="col-span-2 order-1 p-4 group relative h-full">
-
               <div className="grid grid-cols-2 text-maincolor">
                 <div className="pb-4">
                   <p className="font-bold">Кухни</p>
@@ -105,7 +103,7 @@ function HomePage() {
 
               <img
                 src="/images/mini_catalog/kitchens.png"
-                className="h-[80%] hidden xl:block group-hover:hidden absolute bottom-0 left-0 transform transition-all duration-300"
+                className="h-[80%] hidden xl:block group-hover:opacity-0 group-hover:invisible opacity-100 visible absolute bottom-0 left-0 transform transition-all duration-300"
               />
 
               <div className="transition-all duration-300 group-hover:opacity-100 opacity-100 xl:opacity-0">
@@ -121,7 +119,6 @@ function HomePage() {
                   </li>
                 </ul>
               </div>
-
             </div>
           </div>
           <div className="order-2 xl:order-3 border">
@@ -139,7 +136,7 @@ function HomePage() {
               </div>
               <img
                 src="/images/mini_catalog/wardrobes.png"
-                className="h-[60%] hidden xl:block group-hover:hidden absolute bottom-0 left-1/2 transform -translate-x-1/2 transition-all duration-300"
+                className="h-[60%] hidden xl:block group-hover:opacity-0 group-hover:invisible opacity-100 visible absolute bottom-0 left-1/2 transform -translate-x-1/2 transition-all duration-300"
               />
               <div className="transition-all duration-300 group-hover:opacity-100 opacity-100 xl:opacity-0">
                 <ul className="font-semibold">
@@ -171,7 +168,7 @@ function HomePage() {
               </div>
               <img
                 src="/images/mini_catalog/mattresses.png"
-                className="h-[70%] hidden xl:block group-hover:hidden absolute bottom-0 right-0 transform transition-all duration-300"
+                className="h-[70%] hidden xl:block group-hover:opacity-0 group-hover:invisible opacity-100 visible absolute bottom-0 right-0 transform transition-all duration-300"
               />
               <div className="transition-all duration-300 group-hover:opacity-100 opacity-100 xl:opacity-0">
                 <ul className="font-semibold">
@@ -203,7 +200,7 @@ function HomePage() {
               </div>
               <img
                 src="/images/mini_catalog/beds.png"
-                className="h-[60%] hidden xl:block group-hover:hidden absolute bottom-0 left-1/2 transform -translate-x-1/2 transition-all duration-300"
+                className="h-[60%] hidden xl:block group-hover:opacity-0 group-hover:invisible opacity-100 visible absolute bottom-0 left-1/2 transform -translate-x-1/2 transition-all duration-300"
               />
               <div className="transition-all duration-300 group-hover:opacity-100 opacity-100 xl:opacity-0">
                 <ul className="font-semibold">
@@ -235,7 +232,7 @@ function HomePage() {
               </div>
               <img
                 src="/images/mini_catalog/chairs.png"
-                className="h-[65%] hidden xl:block group-hover:hidden absolute bottom-0 left-1/2 transform -translate-x-1/2 transition-all duration-300"
+                className="h-[65%] hidden xl:block group-hover:opacity-0 group-hover:invisible opacity-100 visible absolute bottom-0 left-1/2 transform -translate-x-1/2 transition-all duration-300"
               />
               <div className="transition-all duration-300 group-hover:opacity-100 opacity-100 xl:opacity-0">
                 <ul className="font-semibold">
@@ -266,7 +263,7 @@ function HomePage() {
               alt=""
             />
           </div>
-          <div class="absolute inset-0 bg-black bg-opacity-50 p-8">
+          <div class="absolute inset-0 bg-black bg-opacity-[25%] p-8">
             <p className="font-medium text-xl">
               Полезно знать при выборе мебели
             </p>
