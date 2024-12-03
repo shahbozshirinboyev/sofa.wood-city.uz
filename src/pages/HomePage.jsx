@@ -54,18 +54,25 @@ function HomePage() {
         <p className="text-center text-3xl font-bold">Мебель в Ташкенте</p>
 
         <div className="grid grid-cols-2 xl:grid-cols-4 gap-4 py-8">
-
           <div className="col-span-2 order-1 border group relative">
             <div className="grid grid-cols-2 text-maincolor p-4">
               <div className="pb-4">
                 <p className="font-bold">Диваны</p>
-                <span className="font-bold opacity-50 text-[12px]">от 1 020 руб.</span>
+                <span className="font-bold opacity-50 text-[12px]">
+                  от 1 020 руб.
+                </span>
               </div>
               <div className="text-end font-bold opacity-50">
                 <span className="text-[12px]">51 953</span>
               </div>
             </div>
-            <div className="px-4 pb-4 transition-all duration-300">
+
+            <img
+              src="/images/mini_catalog/sofas.png"
+              className="h-[70%] hidden xl:block group-hover:hidden absolute bottom-0 left-1/2 transform -translate-x-1/2 transition-all duration-300"
+            />
+
+            <div className="px-4 transition-all duration-300 group-hover:opacity-100 opacity-100 xl:opacity-0">
               <ul className="font-semibold">
                 <li className="w-fit hover:text-maincolor transition-all duration-300 cursor-pointer mb-2">
                   Диваны тканевые
@@ -78,20 +85,29 @@ function HomePage() {
                 </li>
               </ul>
             </div>
-            <img src="/images/mini_catalog/sofas.png" alt="" className="hidden xl:block absolute bottom-0 left-1/2 transform -translate-x-1/2 group-hover:opacity-0 transition-all duration-300" />
           </div>
 
-          <div className="col-span-2 xl:col-span-1 xl:row-span-2 order-4 xl:order-2 border min-h-[200px]">
-            <div className="col-span-2 order-1 p-4">
+          <div className="col-span-2 xl:col-span-1 xl:row-span-2 order-4 xl:order-2 border">
+
+            <div className="col-span-2 order-1 p-4 group relative h-full">
+
               <div className="grid grid-cols-2 text-maincolor">
                 <div className="pb-4">
                   <p className="font-bold">Кухни</p>
-                  <span className="font-bold opacity-50 text-[12px]">от 1 020 руб.</span>
+                  <span className="font-bold opacity-50 text-[12px]">
+                    от 1 020 руб.
+                  </span>
                 </div>
                 <div className="text-end font-bold opacity-50">
                   <span className="text-[12px]">51 953</span>
                 </div>
               </div>
+
+              <img
+                src="/images/mini_catalog/kitchens.png"
+                className="h-[80%] hidden xl:block group-hover:hidden absolute bottom-0 left-0 transform transition-all duration-300"
+              />
+
               <div>
                 <ul className="font-semibold">
                   <li className="w-fit hover:text-maincolor transition-all duration-300 cursor-pointer mb-2">
@@ -105,19 +121,26 @@ function HomePage() {
                   </li>
                 </ul>
               </div>
+
             </div>
           </div>
           <div className="order-2 xl:order-3 border">
-            <div className="col-span-2 order-1 p-4">
+            <div className="col-span-2 order-1 p-4 group relative">
               <div className="grid grid-cols-2 text-maincolor">
                 <div className="pb-4">
                   <p className="font-bold">Шкафы</p>
-                  <span className="font-bold opacity-50 text-[12px]">от 1 020 руб.</span>
+                  <span className="font-bold opacity-50 text-[12px]">
+                    от 1 020 руб.
+                  </span>
                 </div>
                 <div className="text-end font-bold opacity-50">
                   <span className="text-[12px]">51 953</span>
                 </div>
               </div>
+              <img
+                src="/images/mini_catalog/wardrobes.png"
+                className="h-[60%] hidden xl:block group-hover:hidden absolute bottom-0 left-1/2 transform -translate-x-1/2 transition-all duration-300"
+              />
               <div>
                 <ul className="font-semibold">
                   <li className="w-fit hover:text-maincolor transition-all duration-300 cursor-pointer mb-2">
@@ -134,16 +157,22 @@ function HomePage() {
             </div>
           </div>
           <div className="order-3 xl:order-4 border">
-            <div className="col-span-2 order-1 p-4">
+            <div className="col-span-2 order-1 p-4 group relative">
               <div className="grid grid-cols-2 text-maincolor">
                 <div className="pb-4">
                   <p className="font-bold">Матрасы</p>
-                  <span className="font-bold opacity-50 text-[12px]">от 1 020 руб.</span>
+                  <span className="font-bold opacity-50 text-[12px]">
+                    от 1 020 руб.
+                  </span>
                 </div>
                 <div className="text-end font-bold opacity-50">
                   <span className="text-[12px]">51 953</span>
                 </div>
               </div>
+              <img
+                src="/images/mini_catalog/mattresses.png"
+                className="h-[70%] hidden xl:block group-hover:hidden absolute bottom-0 right-0 transform transition-all duration-300"
+              />
               <div>
                 <ul className="font-semibold">
                   <li className="w-fit hover:text-maincolor transition-all duration-300 cursor-pointer mb-2">
@@ -160,16 +189,22 @@ function HomePage() {
             </div>
           </div>
           <div className="order-5 xl:order-5 border">
-            <div className="col-span-2 order-1 p-4">
+            <div className="col-span-2 order-1 p-4 group relative">
               <div className="grid grid-cols-2 text-maincolor">
                 <div className="pb-4">
                   <p className="font-bold">Кровати</p>
-                  <span className="font-bold opacity-50 text-[12px]">от 1 020 руб.</span>
+                  <span className="font-bold opacity-50 text-[12px]">
+                    от 1 020 руб.
+                  </span>
                 </div>
                 <div className="text-end font-bold opacity-50">
                   <span className="text-[12px]">51 953</span>
                 </div>
               </div>
+              <img
+                src="/images/mini_catalog/beds.png"
+                className="h-[60%] hidden xl:block group-hover:hidden absolute bottom-0 left-1/2 transform -translate-x-1/2 transition-all duration-300"
+              />
               <div>
                 <ul className="font-semibold">
                   <li className="w-fit hover:text-maincolor transition-all duration-300 cursor-pointer mb-2">
@@ -186,16 +221,22 @@ function HomePage() {
             </div>
           </div>
           <div className="order-6 xl:order-6 border">
-            <div className="col-span-2 order-1 p-4">
+            <div className="col-span-2 order-1 p-4 group relative">
               <div className="grid grid-cols-2 text-maincolor">
                 <div className="pb-4">
                   <p className="font-bold">Стулья</p>
-                  <span className="font-bold opacity-50 text-[12px]">от 1 020 руб.</span>
+                  <span className="font-bold opacity-50 text-[12px]">
+                    от 1 020 руб.
+                  </span>
                 </div>
                 <div className="text-end font-bold opacity-50">
                   <span className="text-[12px]">51 953</span>
                 </div>
               </div>
+              <img
+                src="/images/mini_catalog/chairs.png"
+                className="h-[65%] hidden xl:block group-hover:hidden absolute bottom-0 left-1/2 transform -translate-x-1/2 transition-all duration-300"
+              />
               <div>
                 <ul className="font-semibold">
                   <li className="w-fit hover:text-maincolor transition-all duration-300 cursor-pointer mb-2">
