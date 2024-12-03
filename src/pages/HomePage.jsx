@@ -54,8 +54,8 @@ function HomePage() {
         <p className="text-center text-3xl font-bold">Мебель в Ташкенте</p>
 
         <div className="grid grid-cols-2 xl:grid-cols-4 gap-4 py-8">
-          <div className="col-span-2 order-1 border group relative">
-            <div className="grid grid-cols-2 text-maincolor p-4">
+          <div className="col-span-2 order-1 border p-4 group relative">
+            <div className="grid grid-cols-2 text-maincolor">
               <div className="pb-4">
                 <p className="font-bold">Диваны</p>
                 <span className="font-bold opacity-50 text-[12px]">
@@ -72,7 +72,7 @@ function HomePage() {
               className="h-[70%] hidden xl:block group-hover:hidden absolute bottom-0 left-1/2 transform -translate-x-1/2 transition-all duration-300"
             />
 
-            <div className="px-4 transition-all duration-300 group-hover:opacity-100 opacity-100 xl:opacity-0">
+            <div className="transition-all duration-300 group-hover:opacity-100 opacity-100 xl:opacity-0">
               <ul className="font-semibold">
                 <li className="w-fit hover:text-maincolor transition-all duration-300 cursor-pointer mb-2">
                   Диваны тканевые
@@ -108,7 +108,7 @@ function HomePage() {
                 className="h-[80%] hidden xl:block group-hover:hidden absolute bottom-0 left-0 transform transition-all duration-300"
               />
 
-              <div>
+              <div className="transition-all duration-300 group-hover:opacity-100 opacity-100 xl:opacity-0">
                 <ul className="font-semibold">
                   <li className="w-fit hover:text-maincolor transition-all duration-300 cursor-pointer mb-2">
                     Диваны тканевые
@@ -141,7 +141,7 @@ function HomePage() {
                 src="/images/mini_catalog/wardrobes.png"
                 className="h-[60%] hidden xl:block group-hover:hidden absolute bottom-0 left-1/2 transform -translate-x-1/2 transition-all duration-300"
               />
-              <div>
+              <div className="transition-all duration-300 group-hover:opacity-100 opacity-100 xl:opacity-0">
                 <ul className="font-semibold">
                   <li className="w-fit hover:text-maincolor transition-all duration-300 cursor-pointer mb-2">
                     Диваны тканевые
@@ -173,7 +173,7 @@ function HomePage() {
                 src="/images/mini_catalog/mattresses.png"
                 className="h-[70%] hidden xl:block group-hover:hidden absolute bottom-0 right-0 transform transition-all duration-300"
               />
-              <div>
+              <div className="transition-all duration-300 group-hover:opacity-100 opacity-100 xl:opacity-0">
                 <ul className="font-semibold">
                   <li className="w-fit hover:text-maincolor transition-all duration-300 cursor-pointer mb-2">
                     Диваны тканевые
@@ -205,7 +205,7 @@ function HomePage() {
                 src="/images/mini_catalog/beds.png"
                 className="h-[60%] hidden xl:block group-hover:hidden absolute bottom-0 left-1/2 transform -translate-x-1/2 transition-all duration-300"
               />
-              <div>
+              <div className="transition-all duration-300 group-hover:opacity-100 opacity-100 xl:opacity-0">
                 <ul className="font-semibold">
                   <li className="w-fit hover:text-maincolor transition-all duration-300 cursor-pointer mb-2">
                     Диваны тканевые
@@ -237,7 +237,7 @@ function HomePage() {
                 src="/images/mini_catalog/chairs.png"
                 className="h-[65%] hidden xl:block group-hover:hidden absolute bottom-0 left-1/2 transform -translate-x-1/2 transition-all duration-300"
               />
-              <div>
+              <div className="transition-all duration-300 group-hover:opacity-100 opacity-100 xl:opacity-0">
                 <ul className="font-semibold">
                   <li className="w-fit hover:text-maincolor transition-all duration-300 cursor-pointer mb-2">
                     Диваны тканевые
