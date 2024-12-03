@@ -1,3 +1,4 @@
+import AdsSlider from "../components/AdsSlider/AdsSlider";
 import CustomSlider from "../components/slider/CustomSlider";
 import { useState, useEffect } from "react";
 
@@ -299,6 +300,15 @@ function HomePage() {
           ></iframe>
         </div>
       </div>
+      {/* ADvertising section START */}
+      <div className="container py-12">
+      <AdsSlider>
+      {images.map((image, index) => {
+          return <img key={index} src={image.imgURL} alt={image.imgAlt} />;
+        })}
+      </AdsSlider>
+      </div>
+      {/* ADvertising section END */}
       {/* Useful to know when choosing furniture */}
       <div className="bg-maincolor">
         <div className="container grid grid-cols-1 lg:grid-cols-2 gap-4 py-4">
