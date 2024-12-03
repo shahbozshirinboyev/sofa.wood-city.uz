@@ -22,6 +22,65 @@ function HomePage() {
     },
   ];
 
+  const ads_images = [
+    {
+      imgURL: "../../public/ads_slider/0.webp",
+      imgAlt: "Slider IMG 0",
+    },
+    {
+      imgURL: "../../public/ads_slider/1.webp",
+      imgAlt: "Slider IMG 1",
+    },
+    {
+      imgURL: "../../public/ads_slider/2.webp",
+      imgAlt: "Slider IMG 2",
+    },
+    {
+      imgURL: "../../public/ads_slider/3.webp",
+      imgAlt: "Slider IMG 3",
+    },
+    {
+      imgURL: "../../public/ads_slider/5.webp",
+      imgAlt: "Slider IMG 4",
+    },
+    {
+      imgURL: "../../public/ads_slider/6.webp",
+      imgAlt: "Slider IMG 4",
+    },
+    {
+      imgURL: "../../public/ads_slider/7.webp",
+      imgAlt: "Slider IMG 4",
+    },
+    {
+      imgURL: "../../public/ads_slider/8.webp",
+      imgAlt: "Slider IMG 4",
+    },
+    {
+      imgURL: "../../public/ads_slider/9.webp",
+      imgAlt: "Slider IMG 4",
+    },
+    {
+      imgURL: "../../public/ads_slider/10.webp",
+      imgAlt: "Slider IMG 4",
+    },
+    {
+      imgURL: "../../public/ads_slider/11.webp",
+      imgAlt: "Slider IMG 4",
+    },
+    {
+      imgURL: "../../public/ads_slider/12.webp",
+      imgAlt: "Slider IMG 4",
+    },
+    {
+      imgURL: "../../public/ads_slider/13.webp",
+      imgAlt: "Slider IMG 4",
+    },
+    {
+      imgURL: "../../public/ads_slider/14.webp",
+      imgAlt: "Slider IMG 4",
+    },
+  ];
+
   return (
     <>
       <CustomSlider>
@@ -303,7 +362,7 @@ function HomePage() {
       {/* ADvertising section START */}
       <div className="container py-12">
       <AdsSlider>
-      {images.map((image, index) => {
+      {ads_images.map((image, index) => {
           return <img key={index} src={image.imgURL} alt={image.imgAlt} />;
         })}
       </AdsSlider>
