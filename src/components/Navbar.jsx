@@ -66,6 +66,18 @@ function Navbar() {
 
         <div className="py-4 hidden lg:block lg:text-[14px] xl:text-[16px]">
           <ul className="flex justify-between items-center font-medium transition-all duration-200">
+          <NavLink
+                to="/allproductstype"
+                // key={menu.id}
+                // state={{ activeMenuItem: menu }}
+                // onClick={() => { setActiveMenuItem(menu); }}
+                data-tip={`Вся каталог мебели`}
+                className="tooltip btn btn-sm w-auto hover:font-medium hover:text-maincolor cursor-pointer whitespace-nowrap text-[14px] flex flex-col items-center justify-center"
+              >
+                {/* <img src={menu.icon} alt="" /> */}
+                Вся мебель
+                {/* <span>Вся каталог мебели</span> */}
+              </NavLink>
             {furniture.map((menu) => (
               <NavLink
                 to="/activefurnituremenu"

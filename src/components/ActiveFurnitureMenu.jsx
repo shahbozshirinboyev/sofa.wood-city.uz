@@ -4,10 +4,7 @@ import { useState } from "react";
 function ActiveFurnitureMenu() {
   const location = useLocation();
   const activeMenuItem = location.state?.activeMenuItem;
-
-  const [activeMenuFurniture, setActiveMenuFurniture] = useState(
-    activeMenuItem.items[0]
-  );
+  const [activeMenuFurniture, setActiveMenuFurniture] = useState( activeMenuItem?.items[0]);
 
   return (
     <div className="container">

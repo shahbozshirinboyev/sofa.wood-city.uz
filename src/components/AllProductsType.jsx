@@ -1,42 +1,30 @@
 import { furniture } from "../data/data";
-
 import { NavLink, useLocation } from "react-router-dom";
 import { useState } from "react";
 
 function AllProductsType() {
   const location = useLocation();
   const activeMenuItem = location.state?.activeMenuItem;
+  const [activeMenuFurniture, setActiveMenuFurniture] = useState(activeMenuItem?.items[0]);
 
-  const [activeMenuFurniture, setActiveMenuFurniture] = useState(
-    activeMenuItem?.items[0]
-  );
   return (
     <div className="container">
       {furniture.map((item) => (
         <div key={item.id}>
           {/* Furniture type START */}
-          <h1 className="text-xl md:text-2xl lg:text-3xl font-bold py-4">
-            {" "}
-            {item?.name}{" "}
-          </h1>
+          <h1 className="text-xl md:text-2xl lg:text-3xl font-bold py-4">{item?.name}</h1>
           <div className="flex gap-8 pb-6">
             <p className="text-[14px]">{item?.description}</p>
-            <img
-              src={item?.image}
-              alt={item?.name}
-              className="w-[100px] h-[100%] object-cover"
-            />
+            <img src={item?.image} alt={item?.name} className="w-[100px] h-[100%] object-cover"/>
           </div>
           {/* Furniture type END */}
           {item.items.length === 0 ? (
             <p className="text-center text-xl">
-              <i className="bi bi-layout-wtf text-3xl"></i> <br /> No product
-              type!
+              <i className="bi bi-layout-wtf text-3xl"></i> <br /> No product type!
             </p>
           ) : (
             ""
           )}
-
           {item?.items && (
             <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-8 pb-8">
               {item.items.map((product) => (

@@ -1,8 +1,16 @@
 import AdsSlider from "../components/AdsSlider/AdsSlider";
 import CustomSlider from "../components/slider/CustomSlider";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
+import { useState } from "react";
+import { furniture } from "../data/data";
 
 function HomePage() {
+  console.log(furniture);
+  const location = useLocation();
+  const activeMenuItem = location.state?.activeMenuItem;
+  const [activeMenuFurniture, setActiveMenuFurniture] = useState(
+    activeMenuItem?.items[0]
+  );
   const images = [
     {
       imgURL: "../../public/home_slider/slider-1.jpg",
@@ -58,7 +66,17 @@ function HomePage() {
           <div className="col-span-2 order-1 border p-4 group relative">
             <div className="grid grid-cols-2 text-maincolor">
               <div className="pb-4">
-                <p className="font-bold">Диваны</p>
+                <NavLink
+                  className="font-bold"
+                  to="/activefurnituremenu"
+                  state={{ activeMenuItem: furniture[1] }}
+                  onClick={() => {
+                    setActiveMenuFurniture(furniture[1]);
+                  }}
+                >
+                  Диваны
+                </NavLink>{" "}
+                <br />
                 <span className="font-bold opacity-50 text-[12px]">
                   от 1 020 руб.
                 </span>
@@ -92,7 +110,17 @@ function HomePage() {
             <div className="col-span-2 order-1 p-4 group relative h-full">
               <div className="grid grid-cols-2 text-maincolor">
                 <div className="pb-4">
-                  <p className="font-bold">Кухни</p>
+                  <NavLink
+                    className="font-bold"
+                    to="/activefurnituremenu"
+                    state={{ activeMenuItem: furniture[3] }}
+                    onClick={() => {
+                      setActiveMenuFurniture(furniture[3]);
+                    }}
+                  >
+                    Кухни
+                  </NavLink>{" "}
+                  <br />
                   <span className="font-bold opacity-50 text-[12px]">
                     от 1 020 руб.
                   </span>
@@ -126,7 +154,17 @@ function HomePage() {
             <div className="col-span-2 order-1 p-4 group relative">
               <div className="grid grid-cols-2 text-maincolor">
                 <div className="pb-4">
-                  <p className="font-bold">Шкафы</p>
+                  <NavLink
+                    className="font-bold"
+                    to="/activefurnituremenu"
+                    state={{ activeMenuItem: furniture[0] }}
+                    onClick={() => {
+                      setActiveMenuFurniture(furniture[0]);
+                    }}
+                  >
+                    Шкафы
+                  </NavLink>{" "}
+                  <br />
                   <span className="font-bold opacity-50 text-[12px]">
                     от 1 020 руб.
                   </span>
@@ -158,7 +196,17 @@ function HomePage() {
             <div className="col-span-2 order-1 p-4 group relative">
               <div className="grid grid-cols-2 text-maincolor">
                 <div className="pb-4">
-                  <p className="font-bold">Матрасы</p>
+                  <NavLink
+                    className="font-bold"
+                    to="/activefurnituremenu"
+                    state={{ activeMenuItem: furniture[2] }}
+                    onClick={() => {
+                      setActiveMenuFurniture(furniture[2]);
+                    }}
+                  >
+                    Матрасы
+                  </NavLink>{" "}
+                  <br />
                   <span className="font-bold opacity-50 text-[12px]">
                     от 1 020 руб.
                   </span>
@@ -190,7 +238,17 @@ function HomePage() {
             <div className="col-span-2 order-1 p-4 group relative">
               <div className="grid grid-cols-2 text-maincolor">
                 <div className="pb-4">
-                  <p className="font-bold">Кровати</p>
+                  <NavLink
+                    className="font-bold"
+                    to="/activefurnituremenu"
+                    state={{ activeMenuItem: furniture[2] }}
+                    onClick={() => {
+                      setActiveMenuFurniture(furniture[2]);
+                    }}
+                  >
+                    Кровати
+                  </NavLink>{" "}
+                  <br />
                   <span className="font-bold opacity-50 text-[12px]">
                     от 1 020 руб.
                   </span>
@@ -222,7 +280,16 @@ function HomePage() {
             <div className="col-span-2 order-1 p-4 group relative">
               <div className="grid grid-cols-2 text-maincolor">
                 <div className="pb-4">
-                  <p className="font-bold">Стулья</p>
+                  <NavLink
+                    className="font-bold"
+                    to="/activefurnituremenu"
+                    state={{ activeMenuItem: furniture[4] }}
+                    onClick={() => {
+                      setActiveMenuFurniture(furniture[4]);
+                    }}
+                  >
+                    Стулья
+                  </NavLink> <br />
                   <span className="font-bold opacity-50 text-[12px]">
                     от 1 020 руб.
                   </span>
@@ -291,7 +358,6 @@ function HomePage() {
           </div>
         </div>
 
-
         <div className="border">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23974.863532771484!2d69.27367208474604!3d41.3119539193125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b2931f41f23%3A0x81095e06b654b845!2sAmir%20Temur%20Square!5e0!3m2!1sen!2s!4v1733075437086!5m2!1sen!2s"
@@ -302,8 +368,6 @@ function HomePage() {
         </div>
       </div>
       {/* ADvertising section START */}
-      <NavLink className="btn" to="allproductstype">All Products Type</NavLink>
-
       <div className="container py-12">
         <AdsSlider />
       </div>
