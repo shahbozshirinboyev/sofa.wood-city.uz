@@ -9,6 +9,7 @@ import ErrorPage from "./pages/ErrorPage";
 import HomePage from "./pages/HomePage";
 import ActiveFurnitureMenu from "./components/ActiveFurnitureMenu";
 import ActiveFurnitureMenuItems from "./components/ActiveFurnitureMenuItems";
+import AllProductsType from "./components/AllProductsType";
 
 function App() {
   const routes = createBrowserRouter([
@@ -34,6 +35,10 @@ function App() {
         {
           path : "/activefurnituremenuitems",
           element: <ActiveFurnitureMenuItems />
+        },
+        {
+          path: "/allproductstype",
+          element: <AllProductsType />
         }
       ],
     },
