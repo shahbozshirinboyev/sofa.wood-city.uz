@@ -1,12 +1,13 @@
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import ActiveFurniture from "./ActiveFurniture";
 
 function ActiveFurnitureMenuItems() {
+  const [activeProduct, setActiveProduct] = useState([]);
   const location = useLocation();
   const activeMenuFurniture = location.state?.activeMenuFurniture;
-  console.log(activeMenuFurniture);
   return (
     <>
-    
       <div className="container py-8">
         <h1 className="text-xl md:text-2xl lg:text-3xl font-bold py-4">
           {activeMenuFurniture?.name}
@@ -21,13 +22,17 @@ function ActiveFurnitureMenuItems() {
           />
         </div>
 
-        {
-        activeMenuFurniture.items.length === 0 ? <p className="text-center text-xl"><i className="bi bi-layout-wtf text-3xl"></i> <br /> No product!</p> : ""
-      }
+        {activeMenuFurniture.items.length === 0 ? (
+          <p className="text-center text-xl">
+            <i className="bi bi-layout-wtf text-3xl"></i> <br /> No product!
+          </p>
+        ) : (
+          ""
+        )}
         <div className="grid grid-cols-2 md:grid-cols-3  xl:grid-cols-4 gap-4">
           {/* Card Design START */}
-          {activeMenuFurniture?.items.map((product) => (
-            <div className="border p-4">
+          {activeMenuFurniture?.items.map((product, index) => (
+            <div className="border p-4" key={index}>
               <img src={product.image0} alt="" className="h-[220px] mx-auto" />
 
               <div className="flex gap-4">
@@ -60,19 +65,30 @@ function ActiveFurnitureMenuItems() {
               </div>
 
               <div className="pt-4 flex gap-4">
-                <button className="btn btn-sm flex-1">
+                <button
+                  className="btn btn-sm flex-1"
+                  onClick={() => {
+                    setActiveProduct(product);
+                    document.getElementById(`${product.id}`).showModal();
+                  }}
+                >
                   <i className="bi bi-arrow-up-right"></i> Подробнее
                 </button>
                 <button className="btn btn-sm flex-1">
-                  <i class="bi bi-cart"></i> В корзину
+                  <i className="bi bi-cart"></i> В корзину
                 </button>
               </div>
             </div>
           ))}
-         
+
           {/* Card Design END */}
         </div>
       </div>
+
+      <ActiveFurniture
+        activeProduct={activeProduct}
+        setActiveProduct={setActiveProduct}
+      />
     </>
   );
 }

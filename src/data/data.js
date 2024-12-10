@@ -550,6 +550,7 @@ export const furniture = [
         image: "/menu_images/11-8.png",
         items: [
           {
+            id: uuidv4(),
             image0: "/menu_images/product-0.jpg",
             name: "Полка-стеллаж дсп сталь",
             price: "2 684 руб.",
@@ -558,6 +559,7 @@ export const furniture = [
             bestseller: false,
           },
           {
+            id: uuidv4(),
             image0: "/menu_images/product-1.jpg",
             name: "Угловой стеллаж Ливорно, Сонома Угловой стеллаж Ливорно, Сонома",
             price: "2 684 руб.",
