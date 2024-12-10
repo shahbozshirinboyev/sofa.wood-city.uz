@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 
-function ActiveFurniture({ setActiveProduct, activeProduct }) {
-    
-  const [product, setProduct] = useState(activeProduct);
-  useEffect(() => { setProduct(activeProduct); }, [activeProduct]);
-
-  console.log(product);
+function ActiveFurniture({ product }) {
   return (
     <>
+    
+      <button className="btn btn-sm flex-1" onClick={() => { document.getElementById(`${product.id}`).showModal(); }} >
+        <i className="bi bi-arrow-up-right"></i> Подробнее
+      </button>
+
       <dialog id={`${product.id}`} className="modal">
         <div className="modal-box">
           <h3 className="font-bold text-lg">Hello!</h3>
@@ -16,6 +16,8 @@ function ActiveFurniture({ setActiveProduct, activeProduct }) {
             <br />
             <br />
             <span>{product.name}</span>
+            <br />
+            <span>{product.id}</span>
           </p>
           <div className="modal-action">
             <form method="dialog">

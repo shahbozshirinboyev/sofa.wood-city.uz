@@ -65,15 +65,8 @@ function ActiveFurnitureMenuItems() {
               </div>
 
               <div className="pt-4 flex gap-4">
-                <button
-                  className="btn btn-sm flex-1"
-                  onClick={() => {
-                    setActiveProduct(product);
-                    document.getElementById(`${product.id}`).showModal();
-                  }}
-                >
-                  <i className="bi bi-arrow-up-right"></i> Подробнее
-                </button>
+                <ActiveFurniture product={product} />
+
                 <button className="btn btn-sm flex-1">
                   <i className="bi bi-cart"></i> В корзину
                 </button>
@@ -84,11 +77,6 @@ function ActiveFurnitureMenuItems() {
           {/* Card Design END */}
         </div>
       </div>
-
-      <ActiveFurniture
-        activeProduct={activeProduct}
-        setActiveProduct={setActiveProduct}
-      />
     </>
   );
 }
