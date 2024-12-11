@@ -58,8 +58,8 @@ function Navbar() {
 
           <div className="flex-none md:flex-1 order-3  md:order-2 lg:order-3 flex justify-end items-center">
             <div className="w-[100px] grid grid-cols-1 justify-center items-center cursor-pointer text-maincolor">
-              <i className="bi bi-heart text-center text-[14px]"></i>
-              <p className="text-center text-[12px] font-medium">Избранное</p>
+              <i className="bi bi-cart3 text-center text-[18px]"></i>
+              <p className="text-center text-[12px] font-medium">Корзина</p>
             </div>
           </div>
         </div>
