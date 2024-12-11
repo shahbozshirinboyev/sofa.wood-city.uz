@@ -13,22 +13,23 @@ function HomePage() {
   );
   const images = [
     {
-      imgURL: "../../public/home_slider/slider-1.jpg",
+      imgURL: "/home_slider/slider-1.jpg", // Faqatgina 'public' ichidagi yo'lni ishlating
       imgAlt: "Slider IMG 1",
     },
     {
-      imgURL: "../../public/home_slider/slider-2.jpg",
+      imgURL: "/home_slider/slider-2.jpg",
       imgAlt: "Slider IMG 2",
     },
     {
-      imgURL: "../../public/home_slider/slider-3.jpg",
+      imgURL: "/home_slider/slider-3.jpg",
       imgAlt: "Slider IMG 3",
     },
     {
-      imgURL: "../../public/home_slider/slider-4.jpg",
+      imgURL: "/home_slider/slider-4.jpg",
       imgAlt: "Slider IMG 4",
     },
   ];
+  
 
   return (
     <>
