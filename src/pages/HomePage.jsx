@@ -324,15 +324,15 @@ function HomePage() {
 
       {/* Useful to know when choosing furniture */}
       <div className="container grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-0 py-4">
-        <div class="border text-white group relative items-center justify-center overflow-hidden">
-          <div class="h-full w-full">
+        <div className="border text-white group relative items-center justify-center overflow-hidden">
+          <div className="h-full w-full">
             <img
-              class="h-full w-full object-cover transition-transform delay-150 duration-700 group-hover:scale-110"
+              className="h-full w-full object-cover transition-transform delay-150 duration-700 group-hover:scale-110"
               src="/images/home/home_mini_menu.jpg"
               alt=""
             />
           </div>
-          <div class="absolute inset-0 bg-black bg-opacity-[25%] p-8">
+          <div className="absolute inset-0 bg-black bg-opacity-[25%] p-8">
             <p className="font-medium text-xl">
               Полезно знать при выборе мебели
             </p>
@@ -363,7 +363,7 @@ function HomePage() {
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23974.863532771484!2d69.27367208474604!3d41.3119539193125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b2931f41f23%3A0x81095e06b654b845!2sAmir%20Temur%20Square!5e0!3m2!1sen!2s!4v1733075437086!5m2!1sen!2s"
             allowFullScreen
-            frameborder="0"
+            frameBorder="0"
             className="w-full h-full min-h-[324px]"
           ></iframe>
         </div>
