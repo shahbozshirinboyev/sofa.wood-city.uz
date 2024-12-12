@@ -10,6 +10,7 @@ import HomePage from "./pages/HomePage";
 import ActiveFurnitureMenu from "./components/ActiveFurnitureMenu";
 import ActiveFurnitureMenuItems from "./components/ActiveFurnitureMenuItems";
 import AllProductsType from "./components/AllProductsType";
+import ActiveFurniture from "./components/ActiveFurniture";
 
 function App() {
   const routes = createBrowserRouter([
@@ -25,16 +26,22 @@ function App() {
         {
           path: "/activefurnituremenu",
           element: <ActiveFurnitureMenu />,
-          children: [
-            {
-              path: "/activefurnituremenuitems",
-              element: <ActiveFurnitureMenuItems />
-            }
-          ]
+          // children: [
+          //   {
+          //     path: "/activefurnituremenuitems",
+          //     element: <ActiveFurnitureMenuItems />
+          //   }
+          // ]
         },
         {
           path : "/activefurnituremenuitems",
-          element: <ActiveFurnitureMenuItems />
+          element: <ActiveFurnitureMenuItems />,
+          children: [
+            {
+              path: "/activefurniture",
+              element: <ActiveFurniture />
+            }
+          ]
         },
         {
           path: "/allproductstype",
