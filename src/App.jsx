@@ -26,22 +26,10 @@ function App() {
         {
           path: "/activefurnituremenu",
           element: <ActiveFurnitureMenu />,
-          // children: [
-          //   {
-          //     path: "/activefurnituremenuitems",
-          //     element: <ActiveFurnitureMenuItems />
-          //   }
-          // ]
         },
         {
-          path : "/activefurnituremenuitems",
+          path: "/activefurnituremenuitems",
           element: <ActiveFurnitureMenuItems />,
-          children: [
-            {
-              path: "/activefurniture",
-              element: <ActiveFurniture />
-            }
-          ]
         },
         {
           path: "/allproductstype",
