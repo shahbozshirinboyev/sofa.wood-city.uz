@@ -10,7 +10,6 @@ import HomePage from "./pages/HomePage";
 import ActiveFurnitureMenu from "./components/ActiveFurnitureMenu";
 import ActiveFurnitureMenuItems from "./components/ActiveFurnitureMenuItems";
 import AllProductsType from "./components/AllProductsType";
-import ActiveFurniture from "./components/ActiveFurniture";
 
 function App() {
   const routes = createBrowserRouter([
