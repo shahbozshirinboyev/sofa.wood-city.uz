@@ -11,6 +11,7 @@ function ActiveFurniture({ product }) {
 
       <dialog id={`${product.id}`} className="modal">
         <div className="modal-box p-0 max-w-5xl">
+          
           {/* Modal header Start */}
           <form
             method="dialog"
