@@ -1,38 +1,11 @@
+import Subscribe from "./Subscribe";
 import logo from "/favicon/wood_city.png";
 
 function Foother() {
   return (
     <>
-      <div className="bg-maincolor">
-        <div className="container grid grid-cols-1 lg:grid-cols-2 gap-4 py-4">
-          <div className="text-white">
-            <h2 className="font-semibold">
-              Подпишись и узнай раньше всех о скидках, акциях, распродажах и
-              полезных статьях
-            </h2>
-            <p className="text-[12px]">
-              Подписываясь я соглашаюсь с{" "}
-              <span className="underline cursor-pointer">
-                условиями обработки персональных данных
-              </span>
-            </p>
-          </div>
-
-          <div>
-            <form action="" className="flex py-2">
-              <input
-                type="text"
-                placeholder="Ваш E-mail"
-                className="text-white outline-none border rounded bg-transparent placeholder:text-white py-1 px-2 w-full"
-              />
-              <button className="px-6 md:px-8 py-1 rounded bg-white ml-2 justify-center items-center font-semibold hover:text-maincolor transition-all duration-300">
-                Подписаться
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-
+      <Subscribe />
+      
       <div className="bg-gray-100">
         <div className="container py-4 grid grid-cols-2">
           <img src={logo} alt="Logo" className="w-[220px]" />
