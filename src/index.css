@@ -5,3 +5,13 @@
 * {
   scrollbar-width: thin;
 }
+.company-style h2{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  font-weight: 600;
+}
+
+.company-style p{
+  margin-left: 20px;
+}

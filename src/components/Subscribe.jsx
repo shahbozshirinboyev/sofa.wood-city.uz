@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { http, chatId } from "../services/telegramApi";
 import { useState } from "react";
 
@@ -27,13 +28,13 @@ function Subscribe() {
     return (
         <>
             <div className="bg-maincolor">
-                <div className="container grid grid-cols-1 lg:grid-cols-2 gap-4 py-4">
+                <div className="container grid grid-cols-1 lg:grid-cols-2 gap-4 py-3">
                     <div className="text-white">
                         <h2 className="font-semibold">
                             Подпишись и узнай раньше всех о скидках, акциях, распродажах и полезных статьях
                         </h2>
                         <p className="text-[12px]">
-                            Подписываясь я соглашаюсь с <span className="underline cursor-pointer">условиями обработки персональных данных</span>
+                            Подписываясь я соглашаюсь с <NavLink to="/company" className="underline cursor-pointer">условиями обработки персональных данных</NavLink>
                         </p>
                     </div>
 
@@ -48,7 +49,7 @@ function Subscribe() {
                                 placeholder="Ваш E-mail"
                                 className="text-white outline-none border rounded bg-transparent placeholder:text-white py-1 px-2 w-full"
                             />
-                            <button className="px-6 md:px-8 py-1 rounded bg-white ml-2 justify-center items-center font-semibold hover:text-maincolor transition-all duration-300">
+                            <button className="px-6 md:px-8 py-1 rounded text-maincolor bg-white ml-2 flex justify-center items-center font-semibold hover:text-maincolor transition-all duration-300">
                                 Подписаться
                             </button>
                         </form>

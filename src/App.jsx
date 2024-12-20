@@ -11,6 +11,9 @@ import ActiveFurnitureMenu from "./components/ActiveFurnitureMenu";
 import ActiveFurnitureMenuItems from "./components/ActiveFurnitureMenuItems";
 import AllProductsType from "./components/AllProductsType";
 
+//components
+import Company from "./components/Company";
+
 function App() {
   const routes = createBrowserRouter([
     {
@@ -33,6 +36,9 @@ function App() {
         {
           path: "/allproductstype",
           element: <AllProductsType />
+        },{
+          path: "/company",
+          element: <Company />
         }
       ],
     },
