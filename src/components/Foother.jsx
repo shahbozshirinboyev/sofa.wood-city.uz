@@ -36,21 +36,21 @@ function Foother() {
                 <p className="font-bold py-1">Присоединяйтесь</p>
                 <div className="flex justify-start items-center gap-6 text-[16px] py-1">
 
-                <div className="tooltip" data-tip="Telegram">
+                <a href="https://t.me/wood_city_uz"  target="_blank" className="tooltip hover:text-sky-600 transition-all duration-200 cursor-pointer" data-tip="Telegram">
                   <i className="bi bi-telegram"></i>
-                </div>
+                </a>
 
-                <div className="tooltip" data-tip="YouTube">
+                <a href="https://www.youtube.com/"  target="_blank" className="tooltip hover:text-red-600 transition-all duration-200 cursor-pointer" data-tip="YouTube">
                   <i className="bi bi-youtube"></i>
-                </div>
+                </a>
 
-                <div className="tooltip" data-tip="Instagram">
+                <a href="https://www.instagram.com/"  target="_blank" className="tooltip hover:text-pink-600 transition-all duration-200 cursor-pointer" data-tip="Instagram">
                   <i className="bi bi-instagram"></i>
-                </div>
+                </a>
 
-                <div className="tooltip" data-tip="Wood-City.Uz">
+                <a href="https://wood-city.uz"  target="_blank" className="tooltip hover:text-sky-600 transition-all duration-200 cursor-pointer" data-tip="Wood-City.Uz">
                   <i className="bi bi-link-45deg"></i>
-                </div>
+                </a>
 
                 </div>
               </div>
