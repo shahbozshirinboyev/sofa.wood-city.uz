@@ -35,10 +35,23 @@ function Foother() {
               <div>
                 <p className="font-bold py-1">Присоединяйтесь</p>
                 <div className="flex justify-start items-center gap-6 text-[16px] py-1">
-                  <i className="bi bi-wikipedia"></i>
-                  <i className="bi bi-pinterest"></i>
+
+                <div className="tooltip" data-tip="Telegram">
+                  <i className="bi bi-telegram"></i>
+                </div>
+
+                <div className="tooltip" data-tip="YouTube">
                   <i className="bi bi-youtube"></i>
+                </div>
+
+                <div className="tooltip" data-tip="Instagram">
+                  <i className="bi bi-instagram"></i>
+                </div>
+
+                <div className="tooltip" data-tip="Wood-City.Uz">
                   <i className="bi bi-link-45deg"></i>
+                </div>
+
                 </div>
               </div>
             </div>

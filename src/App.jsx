@@ -36,7 +36,8 @@ function App() {
         {
           path: "/allproductstype",
           element: <AllProductsType />
-        },{
+        },
+        {
           path: "/company",
           element: <Company />
         }
