@@ -4,7 +4,7 @@ import { useState } from "react";
 function ActiveFurnitureMenu() {
   const location = useLocation();
   const activeMenuItem = location.state?.activeMenuItem;
-  const [activeMenuFurniture, setActiveMenuFurniture] = useState( activeMenuItem?.items[0]);
+  const [activeMenuFurniture, setActiveMenuFurniture] = useState( activeMenuItem?.types[0]);
 
   return (
     <div className="container">
@@ -22,12 +22,12 @@ function ActiveFurnitureMenu() {
       {/* Furniture type END */}
 
       {
-        activeMenuItem.items.length === 0 ? <p className="text-center text-xl"><i className="bi bi-layout-wtf text-3xl"></i> <br /> No product type!</p> : ""
+        activeMenuItem.types.length === 0 ? <p className="text-center text-xl"><i className="bi bi-cloud-slash text-3xl"></i> <br /> No product type!</p> : ""
       }
 
-      {activeMenuItem?.items && (
+      {activeMenuItem?.types && (
         <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-8 pb-8">
-          {activeMenuItem.items.map((item) => (
+          {activeMenuItem.types.map((item) => (
             <NavLink
               className="border p-4 group transition-all duration-300 ease-in-out transform hover:scale-100 flex flex-col justify-between"
               key={item.id}

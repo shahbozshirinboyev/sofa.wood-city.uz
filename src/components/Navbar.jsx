@@ -1,13 +1,13 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { furniture } from "../data/data";
+// import { furniture } from "../data/data";
 import logo from "/favicon/wood_city.png";
 import { useState } from "react";
 
-function Navbar({}) {
+function Navbar({ furniture }) {
   const navigate = useNavigate();
   const [activeItem, setActiveItem] = useState(furniture[0]);
   const [activeMenuItem, setActiveMenuItem] = useState(furniture[0]);
-  const [activeMenuFurniture, setActiveMenuFurniture] = useState(furniture[0].items[0]);
+  const [activeMenuFurniture, setActiveMenuFurniture] = useState(furniture[0]?.types[0]);
 
   const handleMouseEnter = (id) => { setActiveItem(id); };
   // const handleMouseLeave = () => { setActiveItem(null); };
@@ -67,24 +67,24 @@ function Navbar({}) {
                 // key={menu.id}
                 // state={{ activeMenuItem: menu }}
                 // onClick={() => { setActiveMenuItem(menu); }}
-                data-tip={`Вся каталог мебели`}
-                className="tooltip btn btn-sm w-auto hover:font-medium hover:text-maincolor cursor-pointer whitespace-nowrap text-[14px] flex flex-col items-center justify-center"
+                // data-tip={`Вся каталог мебели`}
+                className="tooltip btn btn-sm min-w-[80px] hover:font-medium border-0 hover:text-white hover:bg-maincolor bg-maincolor bg-opacity-10 text-maincolor cursor-pointer whitespace-nowrap text-[11.5px] flex flex-col items-center justify-center"
               >
                 {/* <img src={menu.icon} alt="" /> */}
-                Вся мебель
+                <span className="text-[11.5px]">Вся мебель</span>
                 {/* <span>Вся каталог мебели</span> */}
               </NavLink>
-            {furniture.map((menu) => (
+            {furniture.sort((a, b) => new Date(a.created_at) - new Date(b.created_at)).map((menu) => (
               <NavLink
                 to="/activefurnituremenu"
                 key={menu.id}
                 state={{ activeMenuItem: menu }}
                 onClick={() => { setActiveMenuItem(menu); }}
-                data-tip={`${menu.name}`}
-                className="tooltip btn btn-sm w-[80px] hover:font-medium hover:text-maincolor cursor-pointer whitespace-nowrap text-[9px] flex flex-col items-center justify-center"
+                // data-tip={`${menu.name}`}
+                className="tooltip btn btn-sm min-w-[80px] hover:font-medium border-0 hover:text-white hover:bg-maincolor bg-maincolor bg-opacity-10 text-maincolor cursor-pointer whitespace-nowrap text-[11.5px] flex flex-col items-center justify-center"
               >
-                <img src={menu.icon} alt="" />
-                {/* <span>{menu.name}</span> */}
+                <img className="xl:hidden" src={menu.icon} alt="" />
+                <span className="hidden xl:block">{menu.name}</span>
               </NavLink>
             ))}
           </ul>
@@ -107,7 +107,7 @@ function Navbar({}) {
                   }}
                   onMouseEnter={() => handleMouseEnter(menu)}
                   className={`flex justify-start items-center active:border-0 p-2 m-1 relative ${
-                    activeItem !== null && activeItem.id === menu.id
+                    activeItem !== null && activeItem?.id === menu?.id
                       ? "bg-base-300 font-medium text-maincolor"
                       : ""
                   } rounded-lg cursor-pointer transition-all duration-100 ease-in-out`}
@@ -121,11 +121,11 @@ function Navbar({}) {
 
             <div className="m-1 hidden md:block">
               <p className="font-bold text-[20px]">
-                {activeItem !== null ? activeItem.name : ""}
+                {activeItem !== null ? activeItem?.name : ""}
               </p>
               <ul className="mt-4">
                 {activeItem &&
-                  activeItem.items.map((menu) => (
+                  activeItem.types?.map((menu) => (
                     <NavLink
                       key={menu.id}
                       to="/activefurnituremenuitems"

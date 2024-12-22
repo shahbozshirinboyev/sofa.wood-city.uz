@@ -22,16 +22,16 @@ function ActiveFurnitureMenuItems() {
           />
         </div>
 
-        {activeMenuFurniture.items.length === 0 ? (
+        {activeMenuFurniture.products.length === 0 ? (
           <p className="text-center text-xl">
-            <i className="bi bi-layout-wtf text-3xl"></i> <br /> No product!
+            <i className="bi bi-cloud-slash text-3xl"></i> <br /> No product!
           </p>
         ) : (
           ""
         )}
         <div className="grid grid-cols-2 md:grid-cols-3  xl:grid-cols-4 gap-4">
           {/* Card Design START */}
-          {activeMenuFurniture?.items.map((product, index) => (
+          {activeMenuFurniture?.products.map((product, index) => (
             <div className="border p-4" key={index}>
               <img src={product.image0} alt="" className="h-[220px] mx-auto" />
 

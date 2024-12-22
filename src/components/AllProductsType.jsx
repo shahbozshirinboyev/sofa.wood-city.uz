@@ -1,11 +1,10 @@
-import { furniture } from "../data/data";
 import { NavLink, useLocation } from "react-router-dom";
 import { useState } from "react";
 
-function AllProductsType() {
+function AllProductsType({ furniture }) {
   const location = useLocation();
   const activeMenuItem = location.state?.activeMenuItem;
-  const [activeMenuFurniture, setActiveMenuFurniture] = useState(activeMenuItem?.items[0]);
+  const [activeMenuFurniture, setActiveMenuFurniture] = useState(activeMenuItem?.types[0]);
 
   return (
     <div className="container">
@@ -18,16 +17,16 @@ function AllProductsType() {
             <img src={item?.image} alt={item?.name} className="w-[100px] h-[100%] object-cover"/>
           </div>
           {/* Furniture type END */}
-          {item.items.length === 0 ? (
+          {item.types.length === 0 ? (
             <p className="text-center text-xl">
               <i className="bi bi-layout-wtf text-3xl"></i> <br /> No product type!
             </p>
           ) : (
             ""
           )}
-          {item?.items && (
+          {item?.types && (
             <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-8 pb-8">
-              {item.items.map((product) => (
+              {item.types.map((product) => (
                 <NavLink
                   className="border p-4 group transition-all duration-300 ease-in-out transform hover:scale-100 flex flex-col justify-between"
                   key={product.id}
