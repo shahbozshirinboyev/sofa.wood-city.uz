@@ -1,5 +1,6 @@
 // react router dom
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { useState } from "react";
 
 // layouts
 import RooutLayout from "./layouts/RooutLayout";
@@ -15,10 +16,11 @@ import AllProductsType from "./components/AllProductsType";
 import Company from "./components/Company";
 
 function App() {
+  const [openIndex, setOpenIndex] = useState(0);
   const routes = createBrowserRouter([
     {
       path: "/",
-      element: <RooutLayout />,
+      element: <RooutLayout setOpenIndex={setOpenIndex} openIndex={openIndex} />,
       errorElement: <ErrorPage />,
       children: [
         {
@@ -39,7 +41,7 @@ function App() {
         },
         {
           path: "/company",
-          element: <Company />
+          element: <Company setOpenIndex={setOpenIndex} openIndex={openIndex} />
         }
       ],
     },

@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Foother from "../components/Foother";
 
-function RooutLayout() {
+function RooutLayout({setOpenIndex, openIndex}) {
   return (
     <>
       <section className="shadow-md">
@@ -15,7 +15,7 @@ function RooutLayout() {
       </main>
 
       <section>
-        <Foother />
+        <Foother setOpenIndex={setOpenIndex} openIndex={openIndex} /> 
       </section>
     </>
   );

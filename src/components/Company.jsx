@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-function Company() {
+function Company({setOpenIndex, openIndex}) {
 
-    const [openIndex, setOpenIndex] = useState(0);
+ 
     const handleToggle = (index) => { setOpenIndex(openIndex === index ? null : index); };
 
     return (
