@@ -3,6 +3,7 @@ import { http, chatId } from "../services/telegramApi";
 import { useState } from "react";
 
 function Subscribe() {
+    const [loading, setLoading] = useState(false);
     const [email, setEmail] = useState({ email: "" });
     const handleInput = (e) => {
         const { name, value } = e.target;
@@ -10,6 +11,7 @@ function Subscribe() {
     };
 
     const subscribe = async (e) => {
+        setLoading(true);
         e.preventDefault();
         try {
             const message = `Новый подписчик оставил нам свой email, чтобы быть в курсе новостей Wood-City.Uz. \nEmail: ${email.email}`;
@@ -20,9 +22,12 @@ function Subscribe() {
             console.log(response);
             document.getElementById('subscribe').showModal()
             setEmail({ email: "" })
+            setLoading(false);
         }
         catch (error) {
             console.log(error);
+            alert(error);
+            setLoading(false);
         }
     }
     return (
@@ -49,8 +54,10 @@ function Subscribe() {
                                 placeholder="Ваш E-mail"
                                 className="text-white outline-none border rounded bg-transparent placeholder:text-white py-1 px-2 w-full"
                             />
-                            <button className="px-6 md:px-8 py-1 rounded text-maincolor bg-white ml-2 flex justify-center items-center font-semibold hover:text-maincolor transition-all duration-300">
-                                Подписаться
+                            <button className="px-6 md:px-8 py-1 rounded text-maincolor bg-white ml-2 flex justify-center gap-2 items-center font-semibold hover:text-maincolor transition-all duration-300">
+                                <span class={`loading loading-spinner loading-sm ${ loading ? "" : "hidden"}`}></span>
+                                <span className={`${ loading ? "" : "hidden"}`}>Отправляется...</span>
+                                <span className={`${ loading ? "hidden" : ""}`}>Подписаться</span>
                             </button>
                         </form>
                     </div>
