@@ -3,11 +3,11 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Foother from "../components/Foother";
 
-function RooutLayout({setOpenIndex, openIndex}) {
+function RooutLayout({furniture, setOpenIndex, openIndex}) {
   return (
     <>
       <section className="shadow-md">
-        <Navbar />
+        <Navbar furniture={furniture} />
       </section>
 
       <main>

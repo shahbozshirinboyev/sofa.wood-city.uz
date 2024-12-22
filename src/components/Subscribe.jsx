@@ -55,7 +55,7 @@ function Subscribe() {
                                 className="text-white outline-none border rounded bg-transparent placeholder:text-white py-1 px-2 w-full"
                             />
                             <button className="px-6 md:px-8 py-1 rounded text-maincolor bg-white ml-2 flex justify-center gap-2 items-center font-semibold hover:text-maincolor transition-all duration-300">
-                                <span class={`loading loading-spinner loading-sm ${ loading ? "" : "hidden"}`}></span>
+                                <span className={`loading loading-spinner loading-sm ${ loading ? "" : "hidden"}`}></span>
                                 <span className={`${ loading ? "" : "hidden"}`}>Отправляется...</span>
                                 <span className={`${ loading ? "hidden" : ""}`}>Подписаться</span>
                             </button>

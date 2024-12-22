@@ -3,17 +3,13 @@ import { furniture } from "../data/data";
 import logo from "/favicon/wood_city.png";
 import { useState } from "react";
 
-function Navbar() {
+function Navbar({}) {
   const navigate = useNavigate();
   const [activeItem, setActiveItem] = useState(furniture[0]);
   const [activeMenuItem, setActiveMenuItem] = useState(furniture[0]);
-  const [activeMenuFurniture, setActiveMenuFurniture] = useState(
-    furniture[0].items[0]
-  );
+  const [activeMenuFurniture, setActiveMenuFurniture] = useState(furniture[0].items[0]);
 
-  const handleMouseEnter = (id) => {
-    setActiveItem(id);
-  };
+  const handleMouseEnter = (id) => { setActiveItem(id); };
   // const handleMouseLeave = () => { setActiveItem(null); };
 
   return (

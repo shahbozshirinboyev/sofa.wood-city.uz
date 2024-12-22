@@ -1,6 +1,7 @@
 // react router dom
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import supabase from "./services/supabase";
 
 // layouts
 import RooutLayout from "./layouts/RooutLayout";
@@ -16,32 +17,46 @@ import AllProductsType from "./components/AllProductsType";
 import Company from "./components/Company";
 
 function App() {
+  const [furniture, setFurniture] = useState([])
+
+  const getData = async () => {
+    const { data, error } = await supabase.from("furniture").select("*");
+    if (error) {
+      console.error(error);
+    } else {
+      console.log(data);
+      setFurniture(data);
+    };
+  }
+  useEffect(() => { getData(); }, []);
+  
+
   const [openIndex, setOpenIndex] = useState(0);
   const routes = createBrowserRouter([
     {
       path: "/",
-      element: <RooutLayout setOpenIndex={setOpenIndex} openIndex={openIndex} />,
+      element: <RooutLayout furniture={furniture} setOpenIndex={setOpenIndex} openIndex={openIndex} />,
       errorElement: <ErrorPage />,
       children: [
         {
           index: "true",
-          element: <HomePage />,
+          element: <HomePage furniture={furniture} />,
         },
         {
           path: "/activefurnituremenu",
-          element: <ActiveFurnitureMenu />,
+          element: <ActiveFurnitureMenu furniture={furniture} />,
         },
         {
           path: "/activefurnituremenuitems",
-          element: <ActiveFurnitureMenuItems />,
+          element: <ActiveFurnitureMenuItems furniture={furniture} />,
         },
         {
           path: "/allproductstype",
-          element: <AllProductsType />
+          element: <AllProductsType furniture={furniture} />
         },
         {
           path: "/company",
-          element: <Company setOpenIndex={setOpenIndex} openIndex={openIndex} />
+          element: <Company furniture={furniture} setOpenIndex={setOpenIndex} openIndex={openIndex} />
         }
       ],
     },

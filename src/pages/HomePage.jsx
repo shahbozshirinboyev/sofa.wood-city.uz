@@ -5,7 +5,7 @@ import { useState } from "react";
 import { furniture } from "../data/data";
 
 function HomePage() {
-  console.log(furniture);
+  // console.log(furniture);
   const location = useLocation();
   const activeMenuItem = location.state?.activeMenuItem;
   const [activeMenuFurniture, setActiveMenuFurniture] = useState(
