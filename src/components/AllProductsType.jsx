@@ -19,7 +19,7 @@ function AllProductsType({ furniture }) {
           {/* Furniture type END */}
           {item.types.length === 0 ? (
             <p className="text-center text-xl">
-              <i className="bi bi-layout-wtf text-3xl"></i> <br /> No product type!
+              <i className="bi bi-info-circle text-3xl"></i> <br /> No product type!
             </p>
           ) : (
             ""

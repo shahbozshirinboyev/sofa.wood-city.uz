@@ -22,7 +22,7 @@ function ActiveFurnitureMenu() {
       {/* Furniture type END */}
 
       {
-        activeMenuItem.types.length === 0 ? <p className="text-center text-xl"><i className="bi bi-cloud-slash text-3xl"></i> <br /> No product type!</p> : ""
+        activeMenuItem.types.length === 0 ? <p className="text-center text-xl"><i className="bi bi-info-circle text-3xl"></i> <br /> No product type!</p> : ""
       }
 
       {activeMenuItem?.types && (
