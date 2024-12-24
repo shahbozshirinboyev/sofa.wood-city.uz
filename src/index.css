@@ -23,3 +23,12 @@
   color: black !important;
   border: 1px solid #e5e7eb;
 }
+
+.scrollbar-hide {
+  scrollbar-width: none; /* Firefox uchun */
+  -ms-overflow-style: none; /* Internet Explorer uchun */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge uchun */
+}
