@@ -4,6 +4,31 @@ function ProductCard({ product }) {
     console.log(product)
     const [ activeIndex, setActiveIndex ] = useState(0)
 
+    // ------------------------------
+    const containerRef = useRef(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+  
+    const handleMouseDown = (e) => {
+      setIsDragging(true);
+      setStartX(e.pageX - containerRef.current.offsetLeft);
+      setScrollLeft(containerRef.current.scrollLeft);
+    };
+  
+    const handleMouseMove = (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const x = e.pageX - containerRef.current.offsetLeft;
+      const walk = (x - startX) * 2; // Scroll tezligi
+      containerRef.current.scrollLeft = scrollLeft - walk;
+    };
+  
+    const handleMouseUpOrLeave = () => {
+      setIsDragging(false);
+    };  
+    // ------------------------------
+
     return (
         <div className="border p-2 rounded-md" key={product.id}>
 
@@ -48,6 +73,33 @@ function ProductCard({ product }) {
                     </div>
                 </div>
             </div>
+
+            <div
+      className="overflow-hidden cursor-grab select-none border border-gray-300 w-full p-2 my-2"
+      ref={containerRef}
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUpOrLeave}
+      onMouseLeave={handleMouseUpOrLeave}
+    >
+      <div className="flex space-x-2 ">
+        {product.images_product.map((url, index) => (
+          <div
+            key={index}
+            className="min-w-[80px] bg-gray-100 flex items-center justify-center rounded-lg shadow-md"
+          >
+            {/* Rasmlar */}
+            <img
+              src={url}
+              className={`w-[80px] rounded-md mr-2 object-cover cursor-pointer border ${ activeIndex === index ? "border-sky-500" : "" }`}
+            //   draggable="false"
+            onClick={()=>{setActiveIndex(index)}}
+              onMouseDown={(e) => e.preventDefault()} // Scroll qilishga xalaqit bermaydi
+            />
+          </div>
+        ))}
+      </div>
+    </div>
             
 
             {/* <div className="pt-4 flex gap-4">
