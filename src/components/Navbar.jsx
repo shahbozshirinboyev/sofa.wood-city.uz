@@ -22,7 +22,7 @@ function Navbar({ furniture }) {
             onClick={() => navigate("/")}
             className="flex-1 order-2 md:order-1 flex justify-center md:justify-start items-center"
           >
-            <div className="w-[180px] cursor-pointer">
+            <div className=" w-[140px] md:w-[180px] cursor-pointer">
               <img src={logo} alt="logo" />
             </div>
           </div>
@@ -54,10 +54,12 @@ function Navbar({ furniture }) {
           </div>
 
           <div className="flex-none md:flex-1 order-3  md:order-2 lg:order-3 flex justify-end items-center">
-            <div className="w-[100px] grid grid-cols-1 justify-center items-center cursor-pointer text-maincolor">
-              <i className="bi bi-cart3 text-center text-[18px]"></i>
-              <p className="text-center text-[12px] font-medium">Корзина</p>
-            </div>
+            <NavLink to="tel:+998770086563" className="w-[140px] grid grid-cols-1 active:scale-[98%] justify-center items-center cursor-pointer text-maincolor">
+              {/* <i className="bi bi-cart3 text-center text-[18px]"></i>
+              <p className="text-center text-[12px] font-medium">Корзина</p> */}
+              <p className="text-nowrap font-bold text-[12px] md:text-[14px] text-end">+998 (77) 008 65 63</p>
+              <span className="text-[11px] text-end font-bold opacity-65">Быстрый звонок</span>
+            </NavLink>
           </div>
         </div>
 
