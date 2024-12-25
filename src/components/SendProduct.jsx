@@ -84,11 +84,11 @@ function SendProduct({ product }) {
                         </div>
 
                         <div className="">
-                          <p className="font-bold text-[20px]">{product.title}</p>
-                          <p className="font-bold text-[16px] opacity-70">
+                          <p className="font-bold text-[14px]">{product.title}</p>
+                          <p className="font-bold text-[13px] opacity-70">
                             {product.price} сум.
                           </p>
-                          <p>
+                          <p className="text-[12px]">
                             <span className="font-semibold">Размер:</span>{" "}
                             <span>{product.width} x {product.length} x {product.height} см</span>
                           </p>
@@ -151,7 +151,7 @@ function SendProduct({ product }) {
                         />
                       </label>
 
-                      <p className="py-2 text-start text-[14px] lg:text-[16px]">
+                      <p className="py-2 text-start text-[12px] lg:text-[14px]">
                         Специалист компании свяжется с вами в ближайшее время, а
                         на вашу почту будет отправлена презентация проекта для
                         ознакомления
