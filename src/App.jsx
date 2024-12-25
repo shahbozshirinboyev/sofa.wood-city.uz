@@ -61,7 +61,7 @@ function App() {
         },
         {
           path: "/productinfo",
-          element: <ProductInfo />
+          element: <ProductInfo furniture={furniture} />
         }
       ],
     },
