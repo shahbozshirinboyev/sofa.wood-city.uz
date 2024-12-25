@@ -43,7 +43,7 @@ function Navbar({ furniture }) {
 
             <label htmlFor="" className="w-full hidden md:flex">
               <input
-                type="text"
+                type="search"
                 placeholder="Поиск"
                 className="border-[2px] border-maincolor px-2 py-2 w-full focus:outline-none placeholder:text-maincolor text-maincolor"
               />
