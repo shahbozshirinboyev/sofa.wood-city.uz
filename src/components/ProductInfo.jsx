@@ -82,12 +82,16 @@ function ProductInfo() {
 
   return (
     <>
-      <div className="container py-4">
-        <div className="flex justify-between items-center">
+    <div className="container py-4">
+    <div className="flex justify-between items-center">
           <p className="font-medium text-[24px]">{product?.title}</p>
           <button className="btn btn-sm">Оставить заявку</button>
         </div>
-        <div className="text-start py-2">
+    </div>
+    <div className="container flex gap-6">
+      <div className="">
+        
+        <div className="text-start py-2 lg:hidden">
           <p className="whitespace-nowrap line-through text-[16px] font-semibold opacity-50">
             {product.fix_price} сум.
           </p>
@@ -98,7 +102,7 @@ function ProductInfo() {
             </span>
           </p>
         </div>
-        <div className="border relative flex items-center justify-center rounded-md">
+        <div className="border relative flex items-center mt-4 justify-center rounded-md">
           <button onClick={handlePrevImage} className="btn btn-sm btn-circle flex justify-center items-center absolute -left-4 ">
             <i className="bi bi-chevron-left"></i>
           </button>
@@ -140,6 +144,31 @@ function ProductInfo() {
             ))}
           </div>
         </div>
+        <div className="border w-full flex gap-1 rounded-md p-1">
+            <button className="btn btn-sm flex-1">Характеристики</button>
+            <button className="btn btn-sm flex-1">Описание</button>
+        </div>
+
+        <div className="my-4">
+            <h2 className="text-[20px] font-medium mb-2">{product.description_title}</h2>
+            <p className="text-justify">{product.description}</p>
+            <img src={product.image_des} className="h-[400px]" />
+        </div>
+      </div>
+      <div className="w-[320px] mt-4 p-2 rounded-md flex-shrink-0 border hidden lg:block ">
+      <div className="text-start py-2">
+          <p className="whitespace-nowrap line-through text-[16px] font-semibold opacity-50">
+            {product.fix_price} сум.
+          </p>
+          <p className="whitespace-nowrap font-semibold text-[22px] flex justify-start items-center">
+            {product.price} сум.
+            <span className="mx-4 border-0 rounded-xl px-2 py-1 text-[11px] bg-maincolor text-white">
+              Скидка - {discount} %
+            </span>
+          </p>
+        </div>
+
+      </div>
       </div>
     </>
   );
