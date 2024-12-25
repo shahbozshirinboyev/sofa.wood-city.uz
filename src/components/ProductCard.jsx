@@ -53,7 +53,7 @@ function ProductCard({ product }) {
       </div>
 
       <div
-        className="overflow-scroll scrollbar-hide overflow-y-hidden select-none w-full p-2 my-2"
+        className="overflow-scroll scrollbar-hide overflow-y-hidden select-none w-full p-2 my-2 border rounded-md"
         ref={containerRef}
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
@@ -64,7 +64,7 @@ function ProductCard({ product }) {
           {product.images_product.map((url, index) => (
             <div
               key={index}
-              className="min-w-[80px] bg-gray-100 flex items-center justify-center rounded-md"
+              className="min-w-[80px] flex items-center justify-center rounded-md"
             >
               {/* Rasmlar */}
               <img
@@ -91,7 +91,7 @@ function ProductCard({ product }) {
             }
             </div> */}
 
-      <div className="mt-2 border">
+      <div className="mt-2">
         <p className="font-semibold">Габариты:</p>
         <div className="grid grid-cols-3 text-start text-[14px] gap-2 py-1">
           <div>
