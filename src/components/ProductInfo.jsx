@@ -1,9 +1,13 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, NavLink } from "react-router-dom";
 import { useState, useRef } from "react";
 
 function ProductInfo({furniture}) {
   const location = useLocation();
   const product = location.state?.product;
+
+  
+  const [activeMenuItem, setActiveMenuItem] = useState(furniture[0]);
+  const handleMouseEnter = (id) => { setActiveItem(id); };
 
   console.log(product);
   console.log(furniture);
@@ -207,21 +211,18 @@ function ProductInfo({furniture}) {
           <div className="p-2 rounded-md border mt-4">
             <ul className="text-[14px] select-none">
               {furniture.map((menu) => (
-                <li
-                  // to="/activefurnituremenu"
+                <NavLink
+                  to="/activefurnituremenu"
                   key={menu.id}
-                  // state={{ activeMenuItem: menu }}
-                  // onClick={() => {
-                  //   setActiveMenuItem(menu);
-                  //   document.getElementById("menunavbar").close();
-                  // }}
-                  // onMouseEnter={() => handleMouseEnter(menu)}
+                  state={{ activeMenuItem: menu }}
+                  onClick={() => { setActiveMenuItem(menu); document.getElementById("menunavbar").close(); }}
+                  onMouseEnter={() => handleMouseEnter(menu)}
                   className={`flex justify-start gap-1 items-center py-2 px-1 border-0 hover:bg-maincolor hover:bg-opacity-10 active:scale-[98%] my-1 relative  rounded-lg cursor-pointer transition-all duration-100 ease-in-out`}
                 >
                   <img src={menu.icon} alt={menu.name} className="px-2 w-[35px]" />
                   <span>{menu.name}</span>
                   <i className="bi bi-chevron-right flex justify-center items-center absolute right-0 text-[14px] p-1"></i>
-                </li>
+                </NavLink>
               ))}
             </ul>
           </div>
