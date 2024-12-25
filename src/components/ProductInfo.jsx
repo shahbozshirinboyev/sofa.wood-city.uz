@@ -44,6 +44,18 @@ function ProductInfo() {
   };
   // ------------------------------
 
+  const handleNextImage = () => {
+    setActiveIndex((prevIndex) =>
+      prevIndex === product.images_product.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+  
+  const handlePrevImage = () => {
+    setActiveIndex((prevIndex) =>
+      prevIndex === 0 ? product.images_product.length - 1 : prevIndex - 1
+    );
+  };
+
   return (
     <>
       <div className="container py-4">
@@ -57,20 +69,20 @@ function ProductInfo() {
           </p>
           <p className="whitespace-nowrap font-semibold text-[22px] flex justify-start items-center">
             {product.price} сум.
-            <span className="mx-4 border-0 rounded-xl px-2 py-1 text-[12px] bg-maincolor text-white">
+            <span className="mx-4 border-0 rounded-xl px-2 py-1 text-[11px] bg-maincolor text-white">
               Скидка - {discount} %
             </span>
           </p>
         </div>
         <div className="border relative flex items-center justify-center rounded-md">
-          <button className="btn btn-sm btn-circle flex justify-center items-center absolute -left-4 ">
+          <button onClick={handlePrevImage} className="btn btn-sm btn-circle flex justify-center items-center absolute -left-4 ">
             <i className="bi bi-chevron-left"></i>
           </button>
           <img
             src={product.images_product[activeIndex]}
             className="h-[400px] rounded-md"
           />
-          <button className="btn btn-sm btn-circle flex justify-center items-center absolute -right-4">
+          <button onClick={handleNextImage} className="btn btn-sm btn-circle flex justify-center items-center absolute -right-4">
             <i className="bi bi-chevron-right"></i>
           </button>
         </div>
