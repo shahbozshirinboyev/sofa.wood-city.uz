@@ -32,7 +32,7 @@ function ProductCard({ product }) {
   // ------------------------------
 
   return (
-    <div className="border p-2 rounded-md group relative" key={product.id}>
+    <div className="border p-2 rounded-md group relative">
       
       <div onClick={() => navigate("/productinfo", { state: { product: product } })} className="cursor-pointer">
         <img

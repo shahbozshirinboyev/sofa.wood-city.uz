@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
-import ActiveFurniture from "./ActiveFurniture";
 import ProductCard from "./ProductCard";
 
 function ActiveFurnitureMenuItems() {
@@ -33,10 +32,9 @@ function ActiveFurnitureMenuItems() {
         <div className="grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3 gap-4">
           {/* Card Design START */}
           {activeMenuFurniture?.products.map((product) => (
-    
+            <div key={product.id}>
               <ProductCard product={product} />
-    
-
+            </div>
           ))}
 
           {/* Card Design END */}

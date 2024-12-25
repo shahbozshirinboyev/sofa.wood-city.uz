@@ -1,13 +1,14 @@
 import { NavLink, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 // import { furniture } from "../data/data";
 import logo from "/favicon/wood_city.png";
-import { useState } from "react";
 
 function Navbar({ furniture }) {
   const navigate = useNavigate();
   const [activeItem, setActiveItem] = useState(furniture[0]);
   const [activeMenuItem, setActiveMenuItem] = useState(furniture[0]);
   const [activeMenuFurniture, setActiveMenuFurniture] = useState(furniture[0]?.types[0]);
+  
 
   const handleMouseEnter = (id) => { setActiveItem(id); };
   // const handleMouseLeave = () => { setActiveItem(null); };
