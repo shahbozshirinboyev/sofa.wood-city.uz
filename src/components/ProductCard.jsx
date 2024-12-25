@@ -1,10 +1,42 @@
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { http } from "../services/telegramApi";
+import { chatId } from "../services/telegramApi";
 
 function ProductCard({ product }) {
   console.log(product);
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+
+
+  const sendProduct = async (e) => {
+    setLoading(true);
+    e.preventDefault();
+    try {
+        const message = `ID: ${product.id} \nProduct: ${product.title}`;
+        const response = await http.post("/sendPhoto", 
+        {
+            chat_id: chatId,
+            caption: message,
+            photo: product.images_product[0]
+        },
+        {
+          headers: {
+              "Content-Type": "multipart/form-data",
+          },
+      });
+        console.log(response);
+        // document.getElementById('subscribe').showModal()
+        // setEmail({ email: "" })
+        setLoading(false);
+    }
+    catch (error) {
+        console.log(error);
+        alert(error);
+        setLoading(false);
+    }
+}
 
   // ------------------------------
   const containerRef = useRef(null);
@@ -101,7 +133,7 @@ function ProductCard({ product }) {
       </div>
 
       <div className="absolute w-full left-0 bottom-5 px-2 opacity-0 group-hover:opacity-100 transition-all duration-300">
-        <button className="btn btn-sm w-full bg-maincolor bg-opacity-20 hover:bg-maincolor border-0 hover:bg-opacity-35 text-maincolor">
+        <button onClick={sendProduct} className="btn btn-sm w-full bg-maincolor bg-opacity-20 hover:bg-maincolor border-0 hover:bg-opacity-35 text-maincolor">
           Оставить заявку
         </button>
       </div>
