@@ -84,7 +84,7 @@ function SendProduct({ product }) {
                         </div>
 
                         <div className="">
-                          <p className="font-bold text-[14px]">{product.title}</p>
+                          <p className="font-bold text-[14px] line-clamp-1">{product.title}</p>
                           <p className="font-bold text-[13px] opacity-70">
                             {product.price} сум.
                           </p>

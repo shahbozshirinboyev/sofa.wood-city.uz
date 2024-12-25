@@ -1,5 +1,6 @@
 import { useLocation, NavLink } from "react-router-dom";
 import { useState, useRef } from "react";
+import SendProduct from "./SendProduct";
 
 function ProductInfo({ furniture }) {
   const location = useLocation();
@@ -92,7 +93,11 @@ function ProductInfo({ furniture }) {
       <div className="container py-4">
         <div className="flex justify-between items-center">
           <p className="font-medium text-[24px]">{product?.title}</p>
-          <button className="btn btn-sm">Оставить заявку</button>
+          {/* <button className="btn btn-sm">Оставить заявку</button> */}
+          <div>
+          <SendProduct product={product} />
+
+          </div>
         </div>
       </div>
       
