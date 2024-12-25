@@ -1,6 +1,7 @@
 import { useLocation, NavLink } from "react-router-dom";
 import { useState, useRef } from "react";
 import SendProduct from "./SendProduct";
+import OrderOneClick from "./OrderOneClick";
 
 function ProductInfo({ furniture }) {
   const location = useLocation();
@@ -271,7 +272,7 @@ function ProductInfo({ furniture }) {
               </p>
             </div>
 
-            <button className="btn btn-sm w-full my-2">Купить в 1 клик</button>
+            <OrderOneClick product={product} />
 
             <div className="border rounded-md p-2 w-full grid grid-cols-3 gap-1 mt-2 font-semibold">
               <div className="flex gap-1 items-center justify-center">
