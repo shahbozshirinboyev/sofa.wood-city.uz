@@ -20,7 +20,7 @@ function ProductCard({ product }) {
     if (!isDragging) return;
     e.preventDefault();
     const x = e.pageX - containerRef.current.offsetLeft;
-    const walk = (x - startX) * 2; // Scroll tezligi
+    const walk = (x - startX) * 10; // Scroll speed = 2
     containerRef.current.scrollLeft = scrollLeft - walk;
   };
 
@@ -30,7 +30,7 @@ function ProductCard({ product }) {
   // ------------------------------
 
   return (
-    <div className="border p-2 rounded-md" key={product.id}>
+    <div className="border p-2 rounded-md group relative" key={product.id}>
       <div>
         <img
           src={product.images_product[activeIndex]}
@@ -60,40 +60,32 @@ function ProductCard({ product }) {
         onMouseUp={handleMouseUpOrLeave}
         onMouseLeave={handleMouseUpOrLeave}
       >
-        <div className="flex space-x-2 ">
+        <div className="flex space-x-2">
           {product.images_product.map((url, index) => (
             <div
               key={index}
               className="min-w-[80px] flex items-center justify-center rounded-md"
             >
-              {/* Rasmlar */}
+          
               <img
                 src={url}
                 className={`w-[80px] rounded-md mr-2 object-cover cursor-pointer border ${
-                  activeIndex === index ? "border-sky-500" : ""
+                  activeIndex === index ? "border-maincolor" : ""
                 }`}
                 //   draggable="false"
                 onClick={() => {
                   setActiveIndex(index);
                 }}
-                onMouseDown={(e) => e.preventDefault()} // Scroll qilishga xalaqit bermaydi
+                onMouseDown={(e) => e.preventDefault()} 
               />
             </div>
           ))}
         </div>
       </div>
 
-      {/* <div className='border flex gap-1 p-1 overflow-hidden overflow-x-auto select-none'>
-            {
-                product.images_product.map((url, index)=>(
-                    <img key={index} src={url} onClick={()=>{setActiveIndex(index)}} className={`w-[80px] rounded-md object-cover cursor-pointer border ${ activeIndex === index ? "border-sky-500" : "" }`} />
-                ))
-            }
-            </div> */}
-
-      <div className="mt-2">
-        <p className="font-semibold">Габариты:</p>
-        <div className="grid grid-cols-3 text-start text-[14px] gap-2 py-1">
+      <div className="mt-2 group-hover:opacity-0 opacity-100 transition-all duration-300">
+        <p className="font-semibold text-[13px]">Габариты:</p>
+        <div className="grid grid-cols-3 text-start text-[12px] gap-2 py-1">
           <div>
             <p className="opacity-60">Длина</p> <p>{product.length} см</p>
           </div>
@@ -106,12 +98,12 @@ function ProductCard({ product }) {
         </div>
       </div>
 
-      {/* <div className="pt-4 flex gap-4">
-                <button className="btn btn-sm flex-1">
-                    <i className="bi bi-cart"></i> В корзину
-                </button>
-            </div>
-             */}
+      <div className="absolute w-full left-0 bottom-5 px-2 opacity-0 group-hover:opacity-100 transition-all duration-300">
+        <button className="btn btn-sm w-full bg-maincolor bg-opacity-20 hover:bg-maincolor border-0 hover:bg-opacity-35 text-maincolor">
+          Оставить заявку
+        </button>
+      </div>
+
     </div>
   );
 }
