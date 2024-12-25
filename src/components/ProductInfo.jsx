@@ -1,16 +1,112 @@
 import { useLocation } from "react-router-dom";
+import { useState, useRef } from "react";
 
 function ProductInfo() {
-    const location = useLocation();
-    const product = location.state?.product;
-  
+  const location = useLocation();
+  const product = location.state?.product;
+
+  console.log(product);
+
+  const price = product?.price ? Number(product.price.replace(/\s+/g, "")) : 0;
+  const fix_price = product?.fix_price
+    ? Number(product.fix_price.replace(/\s+/g, ""))
+    : 0;
+
+  // Chegirma foizini hisoblash
+  const discount = fix_price
+    ? Math.round(((fix_price - price) / fix_price) * 100)
+    : 0;
+
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  // ------------------------------
+  const containerRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setStartX(e.pageX - containerRef.current.offsetLeft);
+    setScrollLeft(containerRef.current.scrollLeft);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - containerRef.current.offsetLeft;
+    const walk = (x - startX) * 10; // Scroll speed = 2
+    containerRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleMouseUpOrLeave = () => {
+    setIsDragging(false);
+  };
+  // ------------------------------
+
   return (
     <>
-    <div className="container">
-        {product?.title}
-    </div>
+      <div className="container py-4">
+        <div className="flex justify-between items-center">
+          <p className="font-medium text-[24px]">{product?.title}</p>
+          <button className="btn btn-sm">Оставить заявку</button>
+        </div>
+        <div className="text-start py-2">
+          <p className="whitespace-nowrap line-through text-[16px] font-semibold opacity-50">
+            {product.fix_price} сум.
+          </p>
+          <p className="whitespace-nowrap font-semibold text-[22px] flex justify-start items-center">
+            {product.price} сум.
+            <span className="mx-4 border-0 rounded-xl px-2 py-1 text-[12px] bg-maincolor text-white">
+              Скидка - {discount} %
+            </span>
+          </p>
+        </div>
+        <div className="border relative flex items-center justify-center rounded-md">
+          <button className="btn btn-sm btn-circle flex justify-center items-center absolute -left-4 ">
+            <i className="bi bi-chevron-left"></i>
+          </button>
+          <img
+            src={product.images_product[activeIndex]}
+            className="h-[400px] rounded-md"
+          />
+          <button className="btn btn-sm btn-circle flex justify-center items-center absolute -right-4">
+            <i className="bi bi-chevron-right"></i>
+          </button>
+        </div>
+
+        <div
+          className="overflow-scroll scrollbar-hide overflow-y-hidden select-none w-full p-2 my-2 border rounded-md"
+          ref={containerRef}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUpOrLeave}
+          onMouseLeave={handleMouseUpOrLeave}
+        >
+          <div className="flex space-x-2">
+            {product.images_product.map((url, index) => (
+              <div
+                key={index}
+                className="min-w-[80px] flex items-center justify-center rounded-md"
+              >
+                <img
+                  src={url}
+                  className={`w-[80px] rounded-md mr-2 object-cover cursor-pointer border ${
+                    activeIndex === index ? "border-maincolor" : ""
+                  }`}
+                  //   draggable="false"
+                  onClick={() => {
+                    setActiveIndex(index);
+                  }}
+                  onMouseDown={(e) => e.preventDefault()}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </>
-  )
+  );
 }
 
-export default ProductInfo
+export default ProductInfo;
