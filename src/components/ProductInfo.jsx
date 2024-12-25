@@ -45,15 +45,39 @@ function ProductInfo() {
   // ------------------------------
 
   const handleNextImage = () => {
-    setActiveIndex((prevIndex) =>
-      prevIndex === product.images_product.length - 1 ? 0 : prevIndex + 1
-    );
+    setActiveIndex((prevIndex) => {
+      const newIndex = prevIndex === product.images_product.length - 1 ? 0 : prevIndex + 1;
+      // Scroll the thumbnail into view after state update
+      setTimeout(() => {
+        const thumbnailElement = containerRef.current.children[0].children[newIndex];
+        if (thumbnailElement) {
+          thumbnailElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest',
+            inline: 'center'
+          });
+        }
+      }, 0);
+      return newIndex;
+    });
   };
   
   const handlePrevImage = () => {
-    setActiveIndex((prevIndex) =>
-      prevIndex === 0 ? product.images_product.length - 1 : prevIndex - 1
-    );
+    setActiveIndex((prevIndex) => {
+      const newIndex = prevIndex === 0 ? product.images_product.length - 1 : prevIndex - 1;
+      // Scroll the thumbnail into view after state update
+      setTimeout(() => {
+        const thumbnailElement = containerRef.current.children[0].children[newIndex];
+        if (thumbnailElement) {
+          thumbnailElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest',
+            inline: 'center'
+          });
+        }
+      }, 0);
+      return newIndex;
+    });
   };
 
   return (
