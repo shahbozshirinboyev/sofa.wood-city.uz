@@ -15,6 +15,7 @@ import AllProductsType from "./components/AllProductsType";
 
 //components
 import Company from "./components/Company";
+import ProductInfo from "./components/ProductInfo";
 
 function App() {
   const [furniture, setFurniture] = useState([])
@@ -57,6 +58,10 @@ function App() {
         {
           path: "/company",
           element: <Company furniture={furniture} setOpenIndex={setOpenIndex} openIndex={openIndex} />
+        },
+        {
+          path: "/productinfo",
+          element: <ProductInfo />
         }
       ],
     },

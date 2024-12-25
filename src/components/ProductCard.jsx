@@ -1,7 +1,9 @@
 import { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function ProductCard({ product }) {
   console.log(product);
+  const navigate = useNavigate();
   const [activeIndex, setActiveIndex] = useState(0);
 
   // ------------------------------
@@ -31,7 +33,8 @@ function ProductCard({ product }) {
 
   return (
     <div className="border p-2 rounded-md group relative" key={product.id}>
-      <div>
+      
+      <div onClick={() => navigate("/productinfo", { state: { product: product } })} className="cursor-pointer">
         <img
           src={product.images_product[activeIndex]}
           className="h-[220px] mx-auto object-cover"
@@ -66,7 +69,6 @@ function ProductCard({ product }) {
               key={index}
               className="min-w-[80px] flex items-center justify-center rounded-md"
             >
-          
               <img
                 src={url}
                 className={`w-[80px] rounded-md mr-2 object-cover cursor-pointer border ${
@@ -76,7 +78,7 @@ function ProductCard({ product }) {
                 onClick={() => {
                   setActiveIndex(index);
                 }}
-                onMouseDown={(e) => e.preventDefault()} 
+                onMouseDown={(e) => e.preventDefault()}
               />
             </div>
           ))}
