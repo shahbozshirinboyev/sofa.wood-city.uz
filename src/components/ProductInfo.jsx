@@ -155,7 +155,7 @@ function ProductInfo() {
             <img src={product.image_des} className="h-[400px]" />
         </div>
       </div>
-      <div className="w-[320px] mt-4 p-2 rounded-md flex-shrink-0 border hidden lg:block ">
+      <div className="w-[320px] mt-4 p-2 rounded-md flex-shrink-0 border hidden lg:block h-fit">
       <div className="text-start py-2">
           <p className="whitespace-nowrap line-through text-[16px] font-semibold opacity-50">
             {product.fix_price} сум.
