@@ -3,6 +3,7 @@ import { chatId } from "../services/telegramApi";
 import { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import 'react-phone-input-2/lib/style.css'
+import toast, { Toaster } from "react-hot-toast";
 
 function SendProduct({ product }) {
   const [loading, setLoading] = useState(false);
@@ -11,8 +12,13 @@ function SendProduct({ product }) {
   const sendProduct = async (e) => {
     setLoading(true);
     e.preventDefault();
+    if(phoneValue.length > 11){}else{
+      setLoading(false);
+      return toast.error("Номер телефона введен неверно.")
+    }
     try {
-      const message = `ID: ${product.id} \nProduct: ${product.title} \n\n Name: ${nameValue} \n Phone: ${phoneValue} `;
+      const message = `Product: ${product.title}\nPrice: ${product.price} сум\nName: ${nameValue} \nPhone: +${phoneValue} \n\nID: ${product.id}`;
+
       const response = await http.post(
         "/sendPhoto",
         {
@@ -27,12 +33,11 @@ function SendProduct({ product }) {
         }
       );
       console.log(response);
-      // document.getElementById('subscribe').showModal()
-      // setEmail({ email: "" })
          setLoading(false);
         setNameValue("");
         setPhoneValue("998");
         document.getElementById(`order_${product.id}`).close();
+        toast.success('Заявка успешно отправлена.')
     } catch (error) {
       console.log(error);
       alert(error);
@@ -50,6 +55,7 @@ function SendProduct({ product }) {
 
        {/* Order Modal Start */}
        <dialog id={`order_${product.id}`} className="modal">
+        <Toaster />
                 {/* <Toaster /> */}
                 <div className="modal-box w-11/12 max-w-xl p-0 ">
                   {/* Modal header Start */}
@@ -86,7 +92,7 @@ function SendProduct({ product }) {
                         <div className="">
                           <p className="font-bold text-[14px] line-clamp-1">{product.title}</p>
                           <p className="font-bold text-[13px] opacity-70">
-                            {product.price} сум.
+                            {product.price} сум
                           </p>
                           <p className="text-[12px]">
                             <span className="font-semibold">Размер:</span>{" "}
@@ -108,7 +114,7 @@ function SendProduct({ product }) {
                           value={nameValue}
                           onChange={(e) => setNameValue(e.target.value)}
                           type="text"
-                          // required
+                          required
                           placeholder="Ваше имя"
                           className="input input-bordered w-full"
                           style={{
@@ -157,7 +163,13 @@ function SendProduct({ product }) {
                         ознакомления
                       </p>
 
-                      <button className="btn my-4 w-full">Отправить</button>
+                      <button className="btn my-4 w-full">
+                        {!loading && <span>Отправить</span>}
+                        {loading && <span className="flex justify-center items-center gap-2">
+                          <span className="loading loading-spinner loading-sm"></span>
+                          <span>Отправка...</span>
+                        </span>}
+                        </button>
                     </form>
                   </div>
                 </div>

@@ -182,7 +182,7 @@ function ProductInfo({ furniture }) {
                   {/* row 1 */}
                   <tr>
                     <td>Основные размеры товара</td>
-                    <td>196 x 102 x 90 см</td>
+                    <td>{product.length} x {product.width} x {product.height} см</td>
                   </tr>
                   {/* row 2 */}
                   <tr>
