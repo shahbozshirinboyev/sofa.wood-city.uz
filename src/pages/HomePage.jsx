@@ -327,13 +327,13 @@ function HomePage() {
         <div className="border text-white group relative items-center justify-center overflow-hidden">
           <div className="h-full w-full">
             <img
-              className="h-full w-full object-cover transition-transform delay-150 duration-700 group-hover:scale-110"
+              className="h-[320px] lg:h-full w-full object-cover transition-transform delay-150 duration-700 group-hover:scale-110"
               src="/images/home/home_mini_menu.jpg"
               alt=""
             />
           </div>
           <div className="absolute inset-0 bg-black bg-opacity-[25%] p-8">
-            <p className="font-medium text-xl">
+            <p className="font-medium lg:text-xl">
               Полезно знать при выборе мебели
             </p>
             <ul className="py-4 grid grid-cols-1">
