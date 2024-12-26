@@ -353,15 +353,15 @@ function HomePage() {
                 Кресла 2024
               </li>
             </ul>
-            <button className="btn btn-sm hover:text-maincolor hover:bg-white transition-all duration-300">
-              Смотреть все статьи
-            </button>
+            <NavLink to="/allproductstype" onClick={()=>{window.scrollTo({ top: 0, behavior: "smooth" });}} className="btn btn-sm hover:text-maincolor hover:bg-white transition-all duration-300">
+              Смотреть все мебель
+            </NavLink>
           </div>
         </div>
 
         <div className="border">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23974.863532771484!2d69.27367208474604!3d41.3119539193125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b2931f41f23%3A0x81095e06b654b845!2sAmir%20Temur%20Square!5e0!3m2!1sen!2s!4v1733075437086!5m2!1sen!2s"
+            src="https://www.google.com/maps?q=41.458614,69.565940&output=embed"
             allowFullScreen
             frameBorder="0"
             className="w-full h-full min-h-[324px]"
